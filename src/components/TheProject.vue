@@ -1,18 +1,31 @@
 <template>
-  <section class="services-section">
-    <div class="services-section__title">
-      <h2>Mes Projets Professionnel</h2>
-    </div>
+  <div class="services-section__title">
+    <h2>Mes Projets Professionnel</h2>
+  </div>
+  <section class="services-section" id="services-section">
+    <p class="project-pro__title">Cab airport paris</p>
     <div class="services-section__container">
       <div class="services-section__caption">
         <figure>
-          <img src="../assets/screenshot-2024-08-30.png" alt="cab airport paris screenshot" />
+          <img
+            src="../assets/screenshot-2024-08-30.png"
+            alt="cab airport paris screenshot"
+          />
         </figure>
+      </div>
+      <div class="project-pro__stack heading-2">
+        <div class="stack-1 vuejs">
+          <i class="fab fa-vuejs"></i>
+          <p>VueJs</p>
+        </div>
+        <div class="stack-1 laravel">
+          <i class="fab fa-laravel"></i>
+          <p>Laravel</p>
+        </div>
       </div>
       <div class="services">
         <div class="project-container">
           <div class="project-pro__description">
-            <p class="project-pro__title">Cab airport paris</p>
             <p id="project-pro__text">
               Cab Airport Paris est une plateforme de réservation de taxis,
               développée avec Vue.js et Laravel, pour faciliter les trajets
@@ -21,19 +34,12 @@
               les voyageurs souhaitant un déplacement confortable et sans
               tracas.
             </p>
-            <div class="project-pro__stack heading-2">
-              <div class="stack-1 vuejs">
-                <i class="fab fa-vuejs"></i>
-                <p>VueJs</p>
-              </div>
-              <div class="stack-1 laravel">
-                <i class="fab fa-laravel"></i>
-                <p>Laravel</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
+      <Button class="btn-class">
+        <a href="https://cabairportparis.com" target="_blank">Visiter le site</a>
+      </Button>
     </div>
   </section>
 </template>
@@ -81,7 +87,7 @@ window.addEventListener("scroll", () => {
   box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.25);
   opacity: 0;
   transform: translateY(50px);
-  transition: all 0.5s ease;
+  transition: all 0.5s ease_in_out;
 }
 
 .services-section.active {
@@ -114,6 +120,7 @@ window.addEventListener("scroll", () => {
 .services-section__container {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   gap: 2rem;
   width: 100%;
   margin-top: 1rem;
@@ -168,6 +175,10 @@ window.addEventListener("scroll", () => {
   color: #fb4e03;
   line-height: 1;
   position: relative;
+  display: flex;
+  align-self: flex-start;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
 }
 
 #project-pro__text {
@@ -201,6 +212,7 @@ window.addEventListener("scroll", () => {
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  padding-left: 1rem;
 }
 
 .stack-1 {
@@ -225,6 +237,10 @@ window.addEventListener("scroll", () => {
   background-color: #e3342f; /* Couleur Laravel */
 }
 
+.btn-class {
+  padding-left: 1rem;
+}
+
 /* Media Queries */
 @media screen and (min-width: 1099px) {
   .services-section__title {
@@ -236,7 +252,10 @@ window.addEventListener("scroll", () => {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1098px) {
+  .services-section {
+    margin-bottom: 2rem;
+  }
   .services-section__title {
     margin-left: 0; /* Ajusté pour les écrans plus petits */
     padding-left: 1rem;
@@ -248,7 +267,12 @@ window.addEventListener("scroll", () => {
   }
 
   .services-section__caption img {
+    width: 90%;
     transform: scale(1); /* Ajusté pour afficher l'image normalement */
+  }
+
+  .services-section__caption figure {
+    text-align: center;
   }
 }
 </style>

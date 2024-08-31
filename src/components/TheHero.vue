@@ -9,7 +9,7 @@
       <div class="hero-button" data-delay="3" ref="button">
         <Button>
           <router-link to="/">Télécharger mon CV</router-link>
-          <router-link to="/">Contact</router-link>
+          <a href="mailto:egholem@gmail.com">Contact</a>
         </Button>
       </div>
     </div>
@@ -147,7 +147,7 @@ onMounted(() => {
 }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1098px) {
   .hero {
     display: flex;
     justify-content: space-between;
@@ -156,7 +156,7 @@ onMounted(() => {
     max-width: 1035px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 2rem;
+    padding: 2rem 0;
     min-height: 50vh;
 }
 

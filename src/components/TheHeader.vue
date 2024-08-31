@@ -8,10 +8,10 @@
       <nav class="navbar">
         <div class="btn-group">
           <Button>
-          <router-link to="/">Contact</router-link>
+          <a href="mailto:egholem@gmail.com">Contact</a>
         </Button>
         <Button>
-          <router-link to="/">Réalisations</router-link>
+          <router-link to="#services-section">Réalisations</router-link>
         </Button>
         </div>
       </nav>
@@ -20,9 +20,10 @@
 </template>
 
 <script setup>
-import Button from "./Button.vue";
-import TheNotification from "./TheNotification.vue";
+import Button from './Button.vue';
+import TheNotification from './TheNotification.vue';
 </script>
+
 
 <style>
 @media screen and (min-width: 1099px) {
@@ -68,11 +69,11 @@ import TheNotification from "./TheNotification.vue";
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1098px) {
   .container {
     max-width: 1035px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     border-radius: 1rem;
     height: 5rem;
     display: flex;

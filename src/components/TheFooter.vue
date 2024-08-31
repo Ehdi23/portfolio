@@ -13,15 +13,15 @@
           <div class="footer-content__contact">
             <div class="footer-content__contact-info btn">
               <Button>
-                <router-link to="https://www.linkedin.com/in/el-hadi-el-gholem-789a7a270/" class="linkedin-button">
+                <a href="https://www.linkedin.com/in/el-hadi-el-gholem-789a7a270/" target="_blank" class="linkedin-button">
                   <i class="fab fa-linkedin"></i>
                   LinkedIn
-                </router-link>
-                <router-link to="https://x.com/e_gholem" class="x-button">X</router-link>
-                <router-link to="https://github.com/Ehdi23" class="github-button">
+                </a>
+                <a href="https://x.com/e_gholem" target="_blank" class="x-button">X</a>
+                <a href="https://github.com/Ehdi23" target="_blank" class="github-button">
                   <i class="fab fa-github"></i>
                   GitHub
-                </router-link>
+                </a>
               </Button>
             </div>
           </div>
