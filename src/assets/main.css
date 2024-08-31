@@ -1,0 +1,73 @@
+@import './base.css';
+
+#app {
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes fadeInBtn {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes name {
+    0% {
+      opacity: 0;
+      transform: translateX(-100em);
+    }
+    50% {
+      transform: translateX(5em);
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0em);
+    }
+  }
+
+  @keyframes fadeOpacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

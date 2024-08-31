@@ -1,0 +1,214 @@
+<template>
+  <div class="hero">
+    <div class="hero__container">
+      <div class="hero-subtitle" data-delay="1" ref="subtitle">Bonjour, je suis</div>
+      <div class="hero-title">El Hadi El Gholem</div>
+      <div class="hero-description" data-delay="1" ref="description">
+        <p>Développeur Web Autodidacte Laravel & Vuejs</p>
+      </div>
+      <div class="hero-button" data-delay="3" ref="button">
+        <Button>
+          <router-link to="/">Télécharger mon CV</router-link>
+          <router-link to="/">Contact</router-link>
+        </Button>
+      </div>
+    </div>
+    <div class="hero-illustration" data-delay="5" ref="illustration">
+      <figure>
+        <img src="../assets/[removal.ai]_7fdd3655-3a98-47e8-8d0d-c38e085c06cb-pixlr-image-generator-7af35ad6-a621-4513-87f7-c875de2c890c.png" alt="">
+      </figure>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue';
+import Button from './Button.vue';
+
+const subtitle = ref(null);
+const title = ref(null);
+const description = ref(null);
+const button = ref(null);
+const illustration = ref(null);
+
+onMounted(() => {
+  const elements = [subtitle.value, title.value, description.value, button.value, illustration.value];
+
+  elements.forEach(el => {
+    if (el) {
+      const delay = el.getAttribute('data-delay') || 0;
+      el.style.setProperty('--delay', delay);
+
+      setTimeout(() => {
+        el.classList.add('active');
+      }, delay * 1000); // Convertir secondes en millisecondes
+    }
+  });
+});
+</script>
+
+<style>
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-1rem);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 1099px) {
+
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1035px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.hero-subtitle,
+.hero-description,
+.hero-button,
+.hero-illustration figure {
+  opacity: 0;
+  transform: translateY(1rem);
+  animation: fade-in 0.8s ease-out;
+  animation-fill-mode: both; /* Ensure that the element remains in its final state */
+}
+
+.hero-title {
+  animation: name 1s ease;
+  animation-fill-mode: both;
+}
+
+.hero-subtitle {
+  color: #ffc576;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.hero-title {
+  color: #261F40;
+  font-family: Playfair Display, serif;
+  font-size: 3.5rem;
+  line-height: 1;
+  font-weight: 600;
+  margin: 8px 0 16px;
+}
+
+.hero-description p {
+  font-size: 1.5rem;
+  color: #261F40;
+  font-weight: 600;
+}
+
+.hero-button {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.hero-illustration {
+  display: flex;
+  width: 50%;
+}
+
+.hero-illustration figure {
+  width: 50%;
+}
+
+/* Dynamically apply animation delays */
+[data-delay] {
+  animation-delay: calc(var(--delay) * .2s);
+}
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2rem;
+    max-width: 1035px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 2rem;
+    min-height: 50vh;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.hero-subtitle,
+.hero-description,
+.hero-button,
+.hero-illustration figure {
+  opacity: 0;
+  transform: translateY(1rem);
+  animation: fade-in 0.8s ease-out;
+  animation-fill-mode: both; /* Ensure that the element remains in its final state */
+}
+
+.hero-illustration figure img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-title {
+  animation: name 1s ease;
+  animation-fill-mode: both;
+}
+
+.hero-subtitle {
+  color: #ffc576;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.hero-title {
+  color: #261F40;
+  font-family: Playfair Display, serif;
+  font-size: 2.5rem;
+  line-height: 1;
+  font-weight: 700;
+  margin: 8px 0 16px;
+}
+
+.hero-description p {
+  font-size: 1.5rem;
+  color: #261F40;
+  font-weight: 600;
+}
+
+}
+</style>
