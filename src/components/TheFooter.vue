@@ -12,17 +12,13 @@
           </div>
           <div class="footer-content__contact">
             <div class="footer-content__contact-info btn">
-              <!-- <button class="linkedin-button" onclick="window.open('https://www.linkedin.com/in/kevin-nday-0b1b3b1b1/', '_blank')">LinkedIn</button>
-                <button class="github-button" onclick="window.open('https://www.github.com/kevinnday', '_blank')">GitHub</button>
-                <button class="x-button" onclick="window.open('https://www.x.com/kevinnday', '_blank')">X</button> -->
-              <!-- same but using router-link -->
               <Button>
-                <router-link to="/linkedin" class="linkedin-button">
+                <router-link to="https://www.linkedin.com/in/el-hadi-el-gholem-789a7a270/" class="linkedin-button">
                   <i class="fab fa-linkedin"></i>
                   LinkedIn
                 </router-link>
-                <router-link to="/x" class="x-button">X</router-link>
-                <router-link to="/github" class="github-button">
+                <router-link to="https://x.com/e_gholem" class="x-button">X</router-link>
+                <router-link to="https://github.com/Ehdi23" class="github-button">
                   <i class="fab fa-github"></i>
                   GitHub
                 </router-link>
@@ -30,6 +26,15 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <!-- SECTION DESIGNS BY -->
+    <div class="designsby">
+      <div class="designsby-title">
+        Designs by El Hadi
+      </div>
+      <div class="heart-container">
+        <i class="fas fa-heart heart"></i>
       </div>
     </div>
   </section>
@@ -40,53 +45,52 @@ import Button from "./Button.vue";
 </script>
 
 <style>
-
 .footer {
-    color: #261f40;
-    padding: 3rem 0;
+  color: #261f40;
+  padding: 3rem 0;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .footer-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .footer-content__left {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .footer-content__title {
-    font-size: 1.5rem;
-    font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .footer-content__description {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .footer-content__contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .footer-content__contact-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 /* Style des boutons */
@@ -191,5 +195,41 @@ button:hover::after {
 .x-button:hover::after {
   background-color: black; /* Couleur de fond X au survol */
   box-shadow: 0px 0px 0px 0px; /* Supprime l'ombre de bordure au survol */
+}
+
+/* Section DesignsBy */
+.designsby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.designsby-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #261f40;
+  margin-bottom: 1rem;
+}
+
+.heart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heart {
+  font-size: 3rem; /* Taille du cœur */
+  color: #ffc576; /* Couleur du cœur */
+  animation: pulse 1.5s infinite; /* Animation de pulsation */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 </style>
