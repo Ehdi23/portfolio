@@ -6,7 +6,7 @@
     <div class="services-section__container">
       <div class="services-section__caption">
         <figure>
-            <img :src="require('../assets/Capture d\'écran 2024-08-30 135808.png')" alt="Screenshot">
+          <img src="../assets/Capture d'écran 2024-08-30 135808.png" alt="" />
         </figure>
       </div>
       <div class="services">
