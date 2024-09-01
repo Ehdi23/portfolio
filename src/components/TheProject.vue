@@ -1,9 +1,8 @@
 <template>
-  <div class="services-section__title">
-    <h2>Mes Projets Professionnel</h2>
-  </div>
   <section class="services-section" id="services-section">
-    <p class="project-pro__title">Cab airport paris</p>
+    <div class="services-section__title">
+      <h2>Mes Projets Professionnel</h2>
+    </div>
     <div class="services-section__container">
       <div class="services-section__caption">
         <figure>
@@ -14,13 +13,16 @@
         </figure>
       </div>
       <div class="project-pro__stack heading-2">
-        <div class="stack-1 vuejs">
+        <p class="project-pro__title">Cab airport paris</p>
+        <div class="project-pro__stack-used">
+          <div class="stack-1 vuejs">
           <i class="fab fa-vuejs"></i>
           <p>VueJs</p>
         </div>
         <div class="stack-1 laravel">
           <i class="fab fa-laravel"></i>
           <p>Laravel</p>
+        </div>
         </div>
       </div>
       <div class="services">
@@ -38,7 +40,9 @@
         </div>
       </div>
       <Button class="btn-class">
-        <a href="https://cabairportparis.com" target="_blank">Visiter le site</a>
+        <a href="https://cabairportparis.com" target="_blank"
+          >Visiter le site</a
+        >
       </Button>
     </div>
   </section>
@@ -82,9 +86,7 @@ window.addEventListener("scroll", () => {
   flex-direction: column;
   align-items: center;
   padding: 2rem 0;
-  background-color: whitesmoke;
   border-radius: 1rem;
-  box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.25);
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.5s ease_in_out;
@@ -97,13 +99,17 @@ window.addEventListener("scroll", () => {
 
 /* Styles pour le titre */
 .services-section__title {
+  position: relative;
   display: flex;
-  align-self: baseline;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: flex-start;
   color: #261f40;
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.5s ease;
   margin-left: 7rem; /* Déplacé vers les media queries pour la réactivité */
+  width: 100%;
 }
 
 .services-section__title h2 {
@@ -124,6 +130,11 @@ window.addEventListener("scroll", () => {
   gap: 2rem;
   width: 100%;
   margin-top: 1rem;
+  padding: 2rem;
+  background-color: whitesmoke;
+  z-index: -2;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.25);
 }
 
 /* Styles pour la section des images */
@@ -176,9 +187,7 @@ window.addEventListener("scroll", () => {
   line-height: 1;
   position: relative;
   display: flex;
-  align-self: flex-start;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
+  align-self: center;
 }
 
 #project-pro__text {
@@ -211,6 +220,7 @@ window.addEventListener("scroll", () => {
 .project-pro__stack {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap: 1rem;
   padding-left: 1rem;
 }
@@ -241,24 +251,14 @@ window.addEventListener("scroll", () => {
   padding-left: 1rem;
 }
 
-/* Media Queries */
-@media screen and (min-width: 1099px) {
-  .services-section__title {
-    margin-left: 7rem;
-  }
-
-  .services-section__container {
-    flex-direction: row;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1098px) {
+@media screen and (min-width: 768px) {
   .services-section {
     margin-bottom: 2rem;
   }
+
   .services-section__title {
     margin-left: 0; /* Ajusté pour les écrans plus petits */
-    padding-left: 1rem;
+    padding-left: 3rem;
   }
 
   .services-section__container {
@@ -273,6 +273,70 @@ window.addEventListener("scroll", () => {
 
   .services-section__caption figure {
     text-align: center;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 640px) {
+  .services-section__title {
+    margin-left: 0; /* Ajusté pour les écrans plus petits */
+    display: flex;
+    justify-content: center;
+  }
+
+  .services-section__title h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .services-section__container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .services-section__caption img {
+    width: 100%;
+    transform: scale(1); /* Ajusté pour afficher l'image normalement */
+  }
+
+  .services-section__caption figure {
+    text-align: center;
+  }
+
+  .project-pro__title {
+    font-size: 1rem;
+  }
+
+  #project-pro__text {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .project-pro__stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0;
+    align-self: center;
+  }
+
+  .project-pro__stack-used {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .stack-1 p {
+    font-size: 0.8rem;
+  }
+
+  .btn-class {
+    padding-left: 0;
+  }
+
+  .services-section__container {
+    padding: 1rem;
   }
 }
 </style>

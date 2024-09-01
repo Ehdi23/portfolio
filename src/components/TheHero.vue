@@ -211,4 +211,55 @@ onMounted(() => {
 }
 
 }
+
+@media screen and (min-width: 360px) and (max-width: 640px) {
+  .navbar {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .hero__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .hero-subtitle,
+  .hero-description,  
+  .hero-button
+  {
+    opacity: 0;
+    transform: translateY(1rem);
+    animation: fade-in 0.8s ease-out;
+    animation-fill-mode: both; /* Ensure that the element remains in its final state */
+  }
+
+  .hero-illustration {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #261F40;
+    animation: name 1s ease;
+    animation-fill-mode: both;
+  }
+
+  .hero-subtitle {
+    color: #ffc576;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .hero-description p {
+    font-size: 1rem;
+    color: #261F40;
+    font-weight: 600;
+  }
+}
 </style>

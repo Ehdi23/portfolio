@@ -430,4 +430,27 @@ onMounted(() => {
 .skills-section__content__item svg {
   animation: scale 1s linear infinite alternate;
 }
+
+@media screen and (min-width: 360px) and (max-width: 640px) {
+  .skills-section__logo {
+    display: none;
+  }
+
+  .stack-description {
+    padding: 1rem;
+  }
+
+  .stack-description p {
+    text-align: justify;
+  }
+
+  .skills-circle {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+}
 </style>

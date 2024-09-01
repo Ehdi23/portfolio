@@ -19,6 +19,7 @@ li {
   gap: 2rem;
 }
 
+a::before,
 a::after {
   content: "";
   position: absolute;
@@ -75,5 +76,13 @@ li a:hover {
   color: #ffc576;
 }
 
-
+@media screen and (min-width: 360px) and (max-width: 640px)  {
+  li a {
+    font-size: .7rem;
+    letter-spacing: .1rem;
+    padding: 0.3rem 0.6rem;
+    background-color: #261F40;
+    color: #ffc576;
+  }
+}
 </style>
