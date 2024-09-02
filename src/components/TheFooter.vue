@@ -3,36 +3,55 @@
     <div class="footer-container">
       <!-- SECTION ME RETROUVER SUR LES RESEAUX SOCIAUX -->
       <div class="footer-content">
-        <div class="footer-content__left">
-          <div class="footer-content__title">
-            Me retrouver sur les réseaux sociaux
-          </div>
-          <div class="footer-content__description">
-            N'hésitez pas à me contacter pour plus d'informations
-          </div>
-          <div class="footer-content__contact">
-            <div class="footer-content__contact-info btn">
-              <Button>
-                <a href="https://www.linkedin.com/in/el-hadi-el-gholem-789a7a270/" target="_blank" class="linkedin-button">
-                  <i class="fab fa-linkedin"></i>
-                  LinkedIn
-                </a>
-                <a href="https://x.com/e_gholem" target="_blank" class="x-button">X</a>
-                <a href="https://github.com/Ehdi23" target="_blank" class="github-button">
-                  <i class="fab fa-github"></i>
-                  GitHub
-                </a>
-              </Button>
-            </div>
+        <div class="footer-content__title">
+          Me retrouver sur les réseaux sociaux
+        </div>
+        <div class="footer-content__description">
+          N'hésitez pas à me contacter pour plus d'informations
+        </div>
+        <div class="footer-content__contact">
+          <div class="footer-content__contact-info btn">
+            <Button>
+              <a
+                href="https://www.linkedin.com/in/el-hadi-el-gholem-789a7a270/"
+                target="_blank"
+                class="linkedin-button"
+              >
+                <i class="fab fa-linkedin"></i>
+                LinkedIn
+              </a>
+              <a href="https://x.com/e_gholem" target="_blank" class="x-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  version="1.1"
+                  id="Layer_1"
+                  width="16px"
+                  height="16px"
+                  viewBox="0 0 24 24"
+                  xml:space="preserve"
+                >
+                  <path
+                    d="M14.095479,10.316482L22.286354,1h-1.940718l-7.115352,8.087682L7.551414,1H1l8.589488,12.231093L1,23h1.940717  l7.509372-8.542861L16.448587,23H23L14.095479,10.316482z M11.436522,13.338465l-0.871624-1.218704l-6.924311-9.68815h2.981339  l5.58978,7.82155l0.867949,1.218704l7.26506,10.166271h-2.981339L11.436522,13.338465z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/Ehdi23"
+                target="_blank"
+                class="github-button"
+              >
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+            </Button>
           </div>
         </div>
       </div>
     </div>
     <!-- SECTION DESIGNS BY -->
     <div class="designsby">
-      <div class="designsby-title">
-        Designs by El Hadi
-      </div>
+      <div class="designsby-title">Designs by El Hadi</div>
       <div class="heart-container">
         <i class="fas fa-heart heart"></i>
       </div>
@@ -50,25 +69,19 @@ import Button from "./Button.vue";
   padding: 3rem 0;
 }
 
-.footer-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-.footer-content__left {
+.footer-container,
+.footer-content,
+.btn {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
+
+.footer-content__contact-info .btn-group .btn {
+    flex-direction: row;
+  }
 
 .footer-content__title {
   font-size: 1.5rem;
@@ -79,122 +92,34 @@ import Button from "./Button.vue";
   font-size: 1rem;
 }
 
-.footer-content__contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-.footer-content__contact-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-/* Style des boutons */
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 2rem;
-}
-
-button {
-  background: none;
-  color: #ffffff; /* Couleur du texte des boutons */
-  font-size: 0.9rem;
-  font-weight: 600;
-  line-height: 30px;
-  position: relative;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: 0.3s;
-  border: solid 1px transparent; /* Bordure transparente par défaut */
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
-  overflow: hidden;
-  cursor: pointer; /* Curseur pointer pour les boutons cliquables */
-}
-
-/* Effets des boutons avant et après */
-button::before,
-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  right: 50%;
-  z-index: -1;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-button::before {
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  z-index: -2;
-}
-
-button::after {
-  background-color: #261f40; /* Couleur de fond des boutons */
-  opacity: 0;
-}
-
-/* Effets des boutons au survol */
-button:hover {
-  color: #ffc576; /* Couleur du texte au survol */
-}
-
-button:hover::before {
-  opacity: 0.8; /* Augmentation de l'opacité de l'ombre */
-}
-
-button:hover::after {
-  left: 0;
-  right: 0;
-}
-
-/* Boutons LinkedIn */
-.linkedin-button {
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-color: #261f40; /* Couleur de bordure LinkedIn */
-}
-
 .linkedin-button:hover::after {
-  background-color: #005582; /* Couleur de fond LinkedIn au survol */
-  box-shadow: 0px 0px 0px 0px; /* Supprime l'ombre de bordure au survol */
+  background-color: #005582;
 }
 
 /* Boutons GitHub */
-.github-button {
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
+.linkedin-button,
+.github-button,
+.x-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  border-color: #261f40; /* Couleur de bordure GitHub */
+  border-color: #261f40;
 }
 
 .github-button:hover::after {
-  background-color: #1c1c1c; /* Couleur de fond GitHub au survol */
-  box-shadow: 0px 0px 0px 0px; /* Supprime l'ombre de bordure au survol */
+  background-color: #1c1c1c;
 }
 
-/* Boutons X */
-.x-button {
-  border-color: #261f40; /* Couleur de bordure X */
+.x-button svg {
+  fill: #261f40;
 }
 
 .x-button:hover::after {
-  background-color: black; /* Couleur de fond X au survol */
-  box-shadow: 0px 0px 0px 0px; /* Supprime l'ombre de bordure au survol */
+  background-color: black;
+}
+
+.x-button:hover svg {
+  fill: #ffc576;
 }
 
 /* Section DesignsBy */
@@ -219,17 +144,45 @@ button:hover::after {
 }
 
 .heart {
-  font-size: 3rem; /* Taille du cœur */
-  color: #ffc576; /* Couleur du cœur */
-  animation: pulse 1.5s infinite; /* Animation de pulsation */
+  font-size: 3rem;
+  color: #ffc576;
+  animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
     transform: scale(1.2);
+  }
+}
+
+.footer-content__contact-info .btn-group .btn a {
+  width: 8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+}
+
+@media screen and (min-width: 360px) and (max-width: 640px) {
+  .x-button svg {
+    fill: #ffc576;
+  }
+
+  .footer-content__contact-info .btn-group .btn {
+    flex-direction: column;
+  }
+
+  .footer-content__contact-info .btn-group .btn a{
+    min-width: 8rem;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: .5rem 1rem;
   }
 }
 </style>

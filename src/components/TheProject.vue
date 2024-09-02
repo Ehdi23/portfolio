@@ -225,6 +225,13 @@ window.addEventListener("scroll", () => {
   padding-left: 1rem;
 }
 
+.project-pro__stack-used {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .stack-1 {
   padding: 0.5rem 1rem;
   border-radius: 1rem;
@@ -251,7 +258,7 @@ window.addEventListener("scroll", () => {
   padding-left: 1rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 641px) {
   .services-section {
     margin-bottom: 2rem;
   }
@@ -337,6 +344,14 @@ window.addEventListener("scroll", () => {
 
   .services-section__container {
     padding: 1rem;
+  }
+
+  .btn-class .btn a {
+    min-width: 8rem;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: .5rem 1rem;
   }
 }
 </style>

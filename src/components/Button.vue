@@ -59,7 +59,7 @@ li a {
   background: none;
   color: #261F40;
   display: block;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 30px;
   position: relative;
@@ -67,7 +67,7 @@ li a {
   text-decoration: none;
   transition: 0.3s;
   border: solid 1px #261F40;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   padding: 0.5rem 1rem;
   overflow: hidden;
 }

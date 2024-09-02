@@ -84,6 +84,17 @@
     }
   }
 
+  @keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   @keyframes tightToStretch {
     0% {
       transform: scale3d(-1.4, 0.4, -0.7);
@@ -96,6 +107,19 @@
     }
   }
 
+  @keyframes fadeOutShrink {
+    0% {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale3d(0.5, 0.5, 1);
+    }
+  }
+  
+  
+
   /* ANIMATION for go up */
 @keyframes goUp {
   0% {
@@ -103,6 +127,7 @@
   }
   100% {
     transform: translate3d(0, -100%, 0);
+    opacity: 1;
   }
 }
 

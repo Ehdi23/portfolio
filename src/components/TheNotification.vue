@@ -79,7 +79,7 @@ function closeNotification() {
 }
 
 .notification.fade-out {
-  animation: goUp 0.5s ease-in-out forwards;
+  animation: fadeOutShrink 0.5s ease forwards;
 }
 
 .notification.fade-in {

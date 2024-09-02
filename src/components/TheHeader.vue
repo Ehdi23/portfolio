@@ -82,7 +82,7 @@ function closeNotification() {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1098px) {
+@media screen and (min-width: 641px) and (max-width: 1098px) {
   .container {
     max-width: 1035px;
     width: 100%;
@@ -137,9 +137,7 @@ function closeNotification() {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    opacity: 0;
-    transform: scale(0.2);
-    animation: fadeInUp 0.8s ease-in-out forwards;
+    opacity: 1;
   }
 
   .btn-group {
@@ -151,14 +149,16 @@ function closeNotification() {
   }
 
   .logo {
-    display: none;
+    width: 30%;
+    animation: fadeInLeft 1.5s ease-in-out forwards;
+  }
+
+  .logo img {
+    width: 80%;
   }
 
   .navbar {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    animation: tightToStretch 2s ease-in-out forwards;
+    display: none;
   }
 
   .notification-bar {
