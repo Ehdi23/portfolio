@@ -78,9 +78,7 @@ li a:hover {
 
 @media screen and (min-width: 360px) and (max-width: 640px)  {
   li a {
-    font-size: .7rem;
-    letter-spacing: .1rem;
-    padding: 0.3rem 0.6rem;
+    cursor: pointer;
     background-color: #261F40;
     color: #ffc576;
   }

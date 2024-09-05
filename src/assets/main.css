@@ -5,6 +5,7 @@
   padding: 2rem;
   font-weight: normal;
   font-family: 'EB Garamond', serif !important;
+  overflow: hidden;
 }
 
 @keyframes fadeIn {

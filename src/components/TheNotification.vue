@@ -56,7 +56,8 @@ function closeNotification() {
 </script>
 
 <style>
-.hidden-class {
+@media screen and (min-width: 641px) {
+  .hidden-class {
   display: none;
 }
 
@@ -65,6 +66,7 @@ function closeNotification() {
   top: 0;
   left: 0;
   width: 100%;
+  margin: 0 auto;
   height: 1rem;
   background-color: #ffc576; /* Couleur de fond de la notification */
   color: #261e40;
@@ -73,7 +75,7 @@ function closeNotification() {
   align-items: center;
   padding: 1rem 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 0; /* S'assurer que la notification est au-dessus de tout le reste */
+  z-index: 9000; /* S'assurer que la notification est au-dessus de tout le reste */
   animation: fadeInDown 0.8s ease-in-out forwards;
   transition: opacity 0.5s ease-in-out; /* Ajoutez une transition pour le fondu */
 }
@@ -107,6 +109,7 @@ function closeNotification() {
   font-weight: 500;
   margin: 0;
   flex: 1;
+}
 }
 
 @media screen and (min-width: 350px) and (max-width: 640px) {
