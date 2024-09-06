@@ -8,7 +8,7 @@
       <nav class="navbar">
         <div class="btn-group">
           <Button>
-          <a href="mailto:egholem@gmail.com">Contact</a>
+            <router-link to="/contact">Contact</router-link>
         </Button>
         <Button>
           <router-link to="#services-section">Réalisations</router-link>
@@ -154,11 +154,22 @@ function closeNotification() {
   }
 
   .logo img {
-    width: 80%;
+    display: none;
   }
 
   .navbar {
-    display: none;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    animation: goDown 0.8s ease-in-out forwards;
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
   }
 
   .notification-bar {

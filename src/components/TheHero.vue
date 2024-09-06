@@ -4,19 +4,19 @@
       <div class="hero-subtitle" data-delay="1" ref="subtitle">
         Bonjour, je suis
       </div>
-      <div class="hero-title" data-delay="2" ref="title">El Hadi El Gholem</div>
+      <div class="hero-title" data-delay="2" ref="title">El Hadi EL GHOLEM</div>
       <div class="hero-description" data-delay="3" ref="description">
         <p>Développeur Web Autodidacte Laravel & Vuejs</p>
       </div>
       <div class="hero-button" data-delay="4" ref="button">
         <Button>
           <router-link to="/">Télécharger mon CV</router-link>
-          <a href="mailto:egholem@gmail.com">Contact</a>
+          <router-link to="/contact">Contact</router-link>
         </Button>
       </div>
     </div>
-    <div class="hero-illustration" data-delay="5" ref="illustration">
-      <figure>
+    <div class="hero-illustration">
+      <figure class="logo-illustration" data-delay="5" ref="illustration">
         <img
           src="../assets/[removal.ai]_7fdd3655-3a98-47e8-8d0d-c38e085c06cb-pixlr-image-generator-7af35ad6-a621-4513-87f7-c875de2c890c.png"
           alt=""
@@ -63,10 +63,10 @@ onMounted(() => {
 .hero-subtitle,
 .hero-description,
 .hero-button,
-.hero-illustration figure {
+.logo-illustration {
   opacity: 0;
   transform: translateY(1rem);
-  animation: fade-in 0.8s ease-out;
+  animation: fadeInUp 0.8s ease-out;
   animation-fill-mode: both; /* Ensure that the element remains in its final state */
 }
   /* Dynamically apply animation delays */
@@ -83,13 +83,12 @@ onMounted(() => {
     max-width: 1035px;
     width: 100%;
     margin: 0 auto;
+    min-height: 85vh;
   }
 
   .hero__container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 1rem;
     width: 100%;
   }
@@ -115,12 +114,16 @@ onMounted(() => {
     font-weight: 600;
   }
 
-  .hero-button .btn-group .btn {
+  .hero-button {
+    margin-top: 1rem;
     display: flex;
-    justify-content: center;
-    flex-direction: row;
+    justify-content: start;
     gap: 2rem;
     width: 100%;
+  }
+
+  .hero-button .btn-group .btn {
+    flex-direction: row;
   }
 
   .hero-illustration {
@@ -133,17 +136,17 @@ onMounted(() => {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1098px) {
+@media screen and (min-width: 641px) and (max-width: 1098px) {
   .hero {
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: center;
     gap: 2rem;
     max-width: 1035px;
     width: 100%;
     margin: 0 auto;
     padding: 2rem 0;
-    min-height: 50vh;
+    min-height: 85vh;
   }
 
   .hero__container {
@@ -180,15 +183,34 @@ onMounted(() => {
     color: #261f40;
     font-weight: 600;
   }
+
+  .hero-button {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .hero-button .btn-group .btn {
+    flex-direction: row;
+    min-width: 23rem;
+  }
 }
 
 @media screen and (min-width: 360px) and (max-width: 640px) {
+  .hero {
+    min-height: 70vh;
+  }
+
   .hero__container {
     display: flex;
     flex-direction: column;
     align-items: start;
+    justify-content: center;
     gap: 1rem;
     width: 100%;
+    height: 40rem;
   }
 
   .hero-illustration {
@@ -206,8 +228,8 @@ onMounted(() => {
   }
 
   .hero-title {
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: 4rem;
+    font-weight: 700;
     color: #261f40;
   }
 
@@ -228,10 +250,7 @@ onMounted(() => {
   }
 
   .hero-button {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+    display: none;
   }
 
   .hero-button .btn-group .btn a {

@@ -40,7 +40,6 @@ const submitForm = () => {
 </script>
 
 <style>
-@media screen and (min-width: 1099px) {
   .contact {
     display: flex;
     justify-content: center;
@@ -83,9 +82,10 @@ const submitForm = () => {
   }
 
   textarea {
-    height: 5rem;
+    height: 6.5rem;
   }
 
+@media screen and (min-width: 641px) {
   #envelope {
     width: 32rem;
     height: 20rem;
@@ -136,8 +136,13 @@ const submitForm = () => {
     z-index: -1;
   }
 
-  .sheet:hover {
-    transform: translate(-50%, -50%);
+  @keyframes fadeSheet {
+    0% {
+      transform: translate(-50%, -50%);
+    }
+    100% {
+      transform: translate(-50%, 0);
+    }
   }
 
   .sheet {
@@ -150,7 +155,13 @@ const submitForm = () => {
     left: 50%;
     transform: translate(-50%, 0);
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
+    animation: fadeSheet 1s ease;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .contact {
+    display: none;
   }
 }
 </style>

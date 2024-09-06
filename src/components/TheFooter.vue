@@ -169,6 +169,13 @@ import Button from "./Button.vue";
 }
 
 @media screen and (min-width: 360px) and (max-width: 640px) {
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
   .x-button svg {
     fill: #ffc576;
   }

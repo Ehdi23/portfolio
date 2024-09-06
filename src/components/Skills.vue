@@ -1,5 +1,5 @@
 <template>
-  <div class="skills-title">
+  <div class="skills-title" ref="skillsTitleRef" data-delay="1">
     <div class="title">Mes Compétences</div>
     <div class="subtitle">Services</div>
   </div>
@@ -149,62 +149,97 @@
         </div>
       </div>
       <div class="skills-section__logo">
-        <figure>
+        <figure class="figure-logo" ref="skillsLogoRef" data-delay="2">
           <img src="../assets/geek-fennec.png" alt="" />
         </figure>
       </div>
     </div>
-    <div class="stack-description">
+    <div class="stack-description" ref="stackDescRef" data-delay="3">
       <p>{{ stackDescription }}</p>
     </div>
   </section>
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+
+const skillsTitleRef = ref(null);
+const skillsLogoRef = ref(null);
+const stackDescRef = ref(null);
 
 const stackDescription =
   "Je suis un développeur web full-stack passionné par la technologie et l'innovation. J'ai une expérience significative dans le développement d'applications web et mobiles, en utilisant des technologies modernes telles que PHP, JavaScript, Laravel, et VueJs. Je suis également spécialisé dans la conception et le développement de sites web personnalisés, d'applications web, et de solutions e-commerce, pour répondre aux besoins de mes clients et leur offrir une expérience utilisateur exceptionnelle.";
 
 onMounted(() => {
-  const skillsCircle = document.querySelector(".skills-circle");
+  const elements = [
+    skillsTitleRef.value,
+    skillsLogoRef.value,
+    stackDescRef.value,
+  ];
 
   window.addEventListener("scroll", () => {
     const skillsSection = document.querySelector(".skills-section");
-    const skillsSectionLogo = document.querySelector(".skills-section__logo");
     const skillsSectionPosition = skillsSection.getBoundingClientRect().top;
     const screenPosition = window.innerHeight / 1.3;
 
     if (skillsSectionPosition < screenPosition) {
-      setTimeout(() => {
-        skillsSectionLogo.classList.add("active");
-        skillsCircle.classList.add("start-animation");
+      // Animation du cercle de compétences
+      const skillsCircle = document.querySelector(".skills-circle");
+      if (!skillsCircle.classList.contains("start-animation")) {
         setTimeout(() => {
-          skillsCircle.classList.add("rotate-animation");
-        }, 3000);
-      }, 500);
+          skillsCircle.classList.add("start-animation");
+          setTimeout(() => {
+            skillsCircle.classList.add("rotate-animation");
+          }, 3000);
+        }, 500);
+      }
+
+      // Activation des autres éléments
+      elements.forEach((element) => {
+        if (element) {
+          const delay = element.getAttribute("data-delay") || 0;
+          element.style.setProperty("--delay", delay);
+          if (!element.classList.contains("active")) {
+            setTimeout(() => {
+              element.classList.add("active");
+            }, delay * 500); // Convertir secondes en millisecondes
+          }
+        }
+      });
     }
   });
 });
 </script>
 
 <style>
+.skills-title.active,
+.figure-logo.active,
+.stack-description.active {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
 .skills-title {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 4rem;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: all 0.8s ease-out;
 }
 
 .skills-title .title {
   font-size: 1.5rem;
+  font-weight: 500;
   margin-bottom: 1rem;
   color: #261f40;
 }
 
 .skills-title .subtitle {
-  font-family: "EB Garamond", serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 600;
   color: #ffc576;
 }
@@ -323,25 +358,6 @@ onMounted(() => {
   }
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(1rem);
-  }
-  30% {
-    opacity: 1;
-    transform: translateY(-2rem);
-  }
-  70% {
-    opacity: 1;
-    transform: translateY(0.5rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .skills-section__content__item p {
   color: #261f40;
 }
@@ -352,20 +368,14 @@ onMounted(() => {
   align-items: center;
   width: 100%;
   height: 100%;
-  opacity: 0;
 }
 
-.skills-section__logo.active {
-  opacity: 1;
-  transform: translateY(1rem);
-  animation: fade-in 0.8s ease-out;
-  animation-fill-mode: both; /* Ensure that the element remains in its final state */
-}
-
-.skills-section__logo figure {
+.figure-logo {
   display: flex;
   justify-content: flex-end;
-  animation: upAndDown 2s linear infinite;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: all 0.8s ease-out;
 }
 
 @keyframes upAndDown {
@@ -393,6 +403,9 @@ onMounted(() => {
   background-color: whitesmoke;
   border-radius: 1rem;
   box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.25);
+  transform: translateY(1rem);
+  transition: all 0.8s ease-out;
+  opacity: 0;
 }
 
 .stack-description p {
@@ -433,7 +446,21 @@ onMounted(() => {
   animation: scale 1s linear infinite alternate;
 }
 
+[data-delay] {
+  animation-delay: calc(var(--delay) * 0.2s);
+}
+
 @media screen and (min-width: 360px) and (max-width: 640px) {
+  .skills-title {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 0;
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: all 0.8s ease-out;
+  }
+
   .skills-section__logo {
     display: none;
   }
