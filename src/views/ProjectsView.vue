@@ -57,10 +57,7 @@
             intégré des services externes comme GoogleAPI pour la
             géolocalisation et Stripe pour les paiements en ligne.
           </p>
-          <img
-            src="../assets/administration-panel.png"
-            alt="Backend Laravel"
-          />
+          <img src="../assets/administration-panel.png" alt="Backend Laravel" />
         </div>
       </div>
     </section>
@@ -69,6 +66,12 @@
 
 <script setup>
 import TheHeader from "@/components/TheHeader.vue";
+import { onMounted } from "vue";
+
+// when the component is mounted, scroll to the top of the page
+onMounted(() => {
+  window.scrollTo(0, 0);
+});
 </script>
 
 <style scoped>
