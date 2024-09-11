@@ -227,7 +227,7 @@ onMounted(() => {
   }
 
   .hero-title {
-    min-width: 24rem;
+    width: 24rem;
     font-size: 2.5rem;
     font-weight: 700;
   }
