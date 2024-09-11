@@ -7,8 +7,8 @@
       <div class="hero-title" data-delay="2" ref="title">El Hadi EL GHOLEM</div>
       <div class="hero-description" data-delay="3" ref="description">
         <p>
-          développeur web full-stack passionné par la création
-          d'interfaces utilisateur et d'applications web performantes.
+          développeur web full-stack passionné par la création d'interfaces
+          utilisateur et d'applications web performantes.
         </p>
       </div>
       <div class="hero-button" data-delay="4" ref="button">
@@ -227,8 +227,8 @@ onMounted(() => {
   }
 
   .hero-title {
-    width: 24rem;
-    font-size: 2.5rem;
+    min-width: 22rem;
+    font-size: 2.2rem;
     font-weight: 700;
   }
 
