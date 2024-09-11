@@ -11,77 +11,55 @@
       </div>
       <div class="project-section__body grid-layout">
         <div class="grid-cell">
-          <h3>Aperçu du projet</h3>
+          <h3>Problématique et Solution apportée :</h3>
           <p>
-            CabAirportParis est une plateforme dédiée à la réservation de taxis
-            privés pour les transferts entre Paris et les aéroports, avec une
-            interface utilisateur intuitive pour simplifier la gestion des
-            réservations.
+            Les voyageurs à destination et en provenance des aéroports parisiens
+            recherchent une solution de transport fiable, rapide et facile à
+            réserver. CabAirportParis répond à ce besoin en proposant un service
+            de réservation de taxis privés sur-mesure. Grâce à notre plateforme
+            intuitive, les utilisateurs peuvent réserver leur course en quelques
+            clics, suivre leur chauffeur en temps réel et bénéficier d'un
+            service client dédié.
           </p>
           <img src="../assets/capture-principale.png" alt="Aperçu du site" />
         </div>
 
         <div class="grid-cell">
-          <h3>Fonctionnalités principales</h3>
-          <p>
-            L'utilisateur peut réserver un trajet unique en Île-de-France ou
-            opter pour une mise à disposition avec chauffeur pour un minimum de
-            3 heures. Des offres spécifiques sont proposées pour les trajets
-            vers les aéroports et Disneyland.
-          </p>
           <img
-            src="../assets/Capture d'écran 2024-08-30 142847.png"
-            alt="Interface de réservation"
+            src="../assets/trajet-capture.png"
+            alt="Interface de trajet du site"
           />
+          <h3>Les fonctionnalités clés :</h3>
+          <p>
+            Trajets uniques, aller-retour, transferts aéroport, mises à
+            disposition.
+          </p>
+          <p>
+            Les utilisateurs peuvent réserver leur course en quelques clics
+            grâce à notre interface simple et efficace. L'utilisateur a
+            plusieurs options de réservation : trajet simple, aller-retour,
+            transfert aéroport. Il peut également réserver un chauffeur pour 3h
+            au minimum.
+          </p>
+          <p>
+            Les clients peuvent régler leur course en toute sécurité grâce à
+            notre intégration de la solution de paiement en ligne Stripe.
+          </p>
         </div>
 
         <div class="grid-cell">
-          <h3>Expérience utilisateur</h3>
+          <h3>Backend</h3>
           <p>
-            Le site est entièrement responsive et conçu pour offrir une
-            navigation fluide sur tous les appareils. L'utilisateur accède
-            rapidement aux offres populaires, facilitant ainsi le processus de
-            réservation.
+            Laravel a été utilisé pour le développement du back-end. Nous avons
+            créé une API REST pour gérer les trajets, les utilisateurs et les
+            paiements. La gestion du contenu ainsi que les prix des trajets sont
+            gérés via une interface d'administration. Nous avons également
+            intégré des services externes comme GoogleAPI pour la
+            géolocalisation et Stripe pour les paiements en ligne.
           </p>
           <img
-            src="../assets/Capture d'écran 2024-09-10 103649.png"
-            alt="Version mobile du site"
-          />
-        </div>
-
-        <div class="grid-cell">
-          <h3>Technologies</h3>
-          <p>
-            Laravel pour le back-end et Vue.js pour le front-end. API REST
-            (GoogleAPI, Stripe) pour l'intégration des services externes comme
-            la géolocalisation et les paiements en ligne.
-          </p>
-          <img
-            src="../assets/Capture d'écran 2024-08-30 142534.png"
-            alt="Technologies utilisées"
-          />
-        </div>
-
-        <div class="grid-cell">
-          <h3>Design et maquette</h3>
-          <p>
-            La maquette a été conçue pour mettre en avant la clarté et la
-            simplicité d’usage. Le design épuré facilite la navigation et
-            l’accès aux offres.
-          </p>
-          <img src="../assets/capture-design.png" alt="Maquette et design" />
-        </div>
-
-        <div class="grid-cell">
-          <h3>Optimisation et performance</h3>
-          <p>
-            Le site est optimisé pour des performances rapides, avec une gestion
-            efficace des requêtes vers la base de données et des techniques de
-            lazy loading pour les images.
-          </p>
-          <img
-            src="../assets/capture-performance.png"
-            alt="Optimisation et performance"
+            src="../assets/administration-panel.png"
+            alt="Backend Laravel"
           />
         </div>
       </div>
@@ -109,6 +87,28 @@ import TheHeader from "@/components/TheHeader.vue";
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  padding: 1rem 0;
+}
+
+.grid-layout h3 {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.grid-layout p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.grid-layout p span {
+  font-weight: 700;
+}
+
+.grid-layout img {
+  width: 100%;
+  margin: 2rem 0;
+  border-radius: 1rem;
 }
 
 .grid-cell {
@@ -134,11 +134,6 @@ import TheHeader from "@/components/TheHeader.vue";
 
 .project-section__heading h3 {
   font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.project-section__body * {
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 </style>
