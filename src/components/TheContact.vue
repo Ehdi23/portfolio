@@ -353,5 +353,64 @@ const sendEmail = () => {
   .contact {
     display: none;
   }
+
+  .submit {
+    cursor: pointer;
+    z-index: 99;
+  }
+
+  .btn-link div {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .container-contact {
+    margin: 10rem auto 0;
+    width: 80%;
+    border-radius: 1rem;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 1rem;
+  }
+
+  .form-group,
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
+    justify-content: center;
+  }
+
+  label {
+    font-size: 1rem;
+    color: var(--text-subtitle-color);
+    font-weight: 600;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    outline: none;
+    resize: none;
+  }
+
+  input:focus,
+  textarea:focus {
+    border: 1px solid var(--text-color);
+  }
+
+  .textarea {
+    width: 100%;
+  }
 }
 </style>

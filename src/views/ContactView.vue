@@ -83,6 +83,20 @@ import TheFooter from "@/components/TheFooter.vue";
   -webkit-text-stroke: var(--text-color) 0.25px;
 }
 
+@media screen and (max-width: 640px) {
+  .intro-container__texts {
+    width: 100%;
+  }
+
+  #title-contact {
+    align-items: center;
+  }
+
+  #title-contact p {
+    text-align: center;
+  }
+}
+
 /* Styles pour les écrans entre 641px et 1024px */
 @media screen and (min-width: 641px) and (max-width: 1024px) {
   .intro-container {

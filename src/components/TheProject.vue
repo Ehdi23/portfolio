@@ -1,6 +1,6 @@
 <template>
   <section class="services-section" id="services-section">
-    <div class="services-section__title">Mes Projets Professionnel</div>
+    <div class="services-section__title">Projets Pro</div>
     <div class="services-section__container">
       <div class="services-section__caption">
         <figure>
@@ -275,8 +275,9 @@ window.addEventListener("scroll", () => {
     margin-left: 0; /* Ajusté pour les écrans plus petits */
     display: flex;
     justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
   }
 
   .services-section__container {
