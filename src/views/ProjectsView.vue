@@ -61,10 +61,12 @@
         </div>
       </div>
     </section>
+    <TheFooter />
   </div>
 </template>
 
 <script setup>
+import TheFooter from "@/components/TheFooter.vue";
 import TheHeader from "@/components/TheHeader.vue";
 import { onMounted } from "vue";
 
@@ -138,5 +140,11 @@ onMounted(() => {
 .project-section__heading h3 {
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

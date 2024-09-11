@@ -116,30 +116,6 @@ import Button from "./Button.vue";
 /** style for mobile */
 
 @media screen and (min-width: 360px) and (max-width: 640px) {
-  .container {
-    max-width: 1035px;
-    width: 100%;
-    margin: 0 auto 2rem;
-    border-radius: 1rem;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    opacity: 1;
-  }
-
-  .btn-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 2rem;
-  }
-
-  .logo {
-    width: 30%;
-    animation: fadeInLeft 1.5s ease-in-out forwards;
-  }
 
   .logo img {
     display: none;
@@ -147,17 +123,19 @@ import Button from "./Button.vue";
 
   .navbar {
     width: 100%;
+    padding-right: 1rem;
     display: flex;
     justify-content: flex-end;
     animation: goDown 0.8s ease-in-out forwards;
   }
 
-  .btn-group {
+  .btn-group .btn a {
+    width: 9rem;
+    height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    gap: 2rem;
+    font-size: 1.2rem;
   }
 
   .notification-bar {

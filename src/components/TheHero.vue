@@ -215,7 +215,7 @@ onMounted(() => {
 /* Small screens */
 @media screen and (min-width: 360px) and (max-width: 640px) {
   .hero {
-    min-height: 70vh;
+    min-height: 25vh;
   }
 
   .hero__container {

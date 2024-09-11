@@ -392,8 +392,12 @@ onMounted(() => {
 
 /* Responsive styles */
 @media screen and (min-width: 360px) and (max-width: 640px) {
+  .skills-section {
+    padding: 1rem;
+  }
   .skills-title {
     margin-top: 0;
+    margin-bottom: 3rem;
     align-items: start;
   }
 

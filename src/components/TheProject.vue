@@ -268,6 +268,9 @@ window.addEventListener("scroll", () => {
 }
 
 @media screen and (min-width: 360px) and (max-width: 640px) {
+  .services-section {
+    padding: 1rem;
+  }
   .services-section__title {
     margin-left: 0; /* Ajusté pour les écrans plus petits */
     display: flex;
@@ -322,9 +325,9 @@ window.addEventListener("scroll", () => {
   }
 
   .btn-class .btn a {
-    min-width: 8rem;
+    width: 12rem;
     height: 3rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     padding: 0.5rem 1rem;
   }
