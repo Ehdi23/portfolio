@@ -13,9 +13,16 @@
       <nav class="navbar">
         <div class="btn-group">
           <Button>
-            <router-link :to="{ name: 'contact' }" class="btn-link"
-              >Contact</router-link
+            <router-link
+              v-if="$route.name !== 'contact'"
+              :to="{ name: 'contact' }"
+              class="btn-link"
             >
+              Contact
+            </router-link>
+            <router-link v-else :to="{ name: 'home' }" class="btn-link">
+              Home
+            </router-link>
           </Button>
         </div>
       </nav>
@@ -116,7 +123,6 @@ import Button from "./Button.vue";
 /** style for mobile */
 
 @media screen and (min-width: 360px) and (max-width: 640px) {
-
   .logo img {
     display: none;
   }
