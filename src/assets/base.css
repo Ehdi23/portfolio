@@ -22,6 +22,7 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --vt-c-text-gold: #ffc576;
 }
 
 /* semantic color variables for this project */
@@ -39,8 +40,9 @@
   --section-gap: 160px;
 
   --background-color: #fafafa;
-  --text-color: #333;
-  --text-title-color: #111;
+  --text-color: #261f40;
+  --text-subtitle-color: var(--vt-c-text-gold);
+  --text-title-color: #261f40;
   --text-hover-color: #000;
   --light-accent-color: #ccc;
   --accent-color: #abbaab;
@@ -71,9 +73,8 @@
 
 body {
   min-height: 100vh;
-  color: black;
-  /* background-color: #116479; */
-  background-color: white;
+  color: #261F40;
+  background-color: #f2f2f2;
   transition:
     color 0.5s,
     background-color 0.5s;

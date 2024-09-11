@@ -1,18 +1,22 @@
 <template>
   <header>
-    <TheNotification v-if="showNotification" @close="showNotification = false" />
     <div class="container">
       <div class="logo">
-        <img src="../assets/[removal.ai]_7fdd3655-3a98-47e8-8d0d-c38e085c06cb-pixlr-image-generator-7af35ad6-a621-4513-87f7-c875de2c890c.png" alt="" srcset="">
+        <router-link :to="{ name: 'home' }">
+          <img
+            src="../assets/[removal.ai]_7fdd3655-3a98-47e8-8d0d-c38e085c06cb-pixlr-image-generator-7af35ad6-a621-4513-87f7-c875de2c890c.png"
+            alt=""
+            srcset=""
+          />
+        </router-link>
       </div>
       <nav class="navbar">
         <div class="btn-group">
           <Button>
-            <router-link to="/contact">Contact</router-link>
-        </Button>
-        <Button>
-          <router-link to="#services-section">Réalisations</router-link>
-        </Button>
+            <router-link :to="{ name: 'contact' }" class="btn-link"
+              >Contact</router-link
+            >
+          </Button>
         </div>
       </nav>
     </div>
@@ -20,54 +24,39 @@
 </template>
 
 <script setup>
-import Button from './Button.vue';
-import TheNotification from './TheNotification.vue';
-import { ref, onMounted } from "vue";
-
-const showNotification = ref(false);
-
-onMounted(() => {
-  setTimeout(() => {
-    showNotification.value = true;
-  }, 3000);
-});
-
-function closeNotification() {
-  showNotification.value = false;
-}
+import Button from "./Button.vue";
 </script>
-
 
 <style>
 @media screen and (min-width: 1099px) {
-.container {
-  max-width: 1035px;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 1rem;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  .container {
+    max-width: 1035px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 1rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.btn-group {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 2rem;
-}
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+  }
 
-.navbar {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  animation: fadeInRight 0.8s ease-in-out forwards;
-}
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    animation: fadeInRight 0.8s ease-in-out forwards;
+  }
 
   .logo {
-    width: 20%;
+    width: 10%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -76,9 +65,8 @@ function closeNotification() {
   }
 
   .logo img {
-    width: 40%;
-  animation: tightToStretch 2s ease-in-out forwards;
-
+    width: 100%;
+    animation: tightToStretch 2s ease-in-out forwards;
   }
 }
 

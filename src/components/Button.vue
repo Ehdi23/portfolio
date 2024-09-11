@@ -1,7 +1,7 @@
 <template>
   <div class="btn-group">
     <li class="btn">
-        <slot></slot>
+        <slot class="btn-link"></slot>
     </li>
   </div>
 </template>
@@ -19,8 +19,8 @@ li {
   gap: 2rem;
 }
 
-a::before,
-a::after {
+.btn-link::before,
+.btn-link::after {
   content: "";
   position: absolute;
   overflow: hidden;
@@ -32,32 +32,32 @@ a::after {
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-a::before {
+.btn-link::before {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 0;
   z-index: -2;
 }
 
-a::after {
-  background-color: #261F40;
+.btn-link::after {
+  background-color: var(--text-color);
 }
 
-a:hover {
-  color: #1f2235;
+.btn-link:hover {
+  color: var(--text-color);
 }
 
-a:hover::before {
+.btn-link:hover::before {
   opacity: 0.8;
 }
 
-a:hover::after {
+.btn-link:hover::after {
   left: 0;
   right: 0;
 }
 
-li a {
+.btn-link {
   background: none;
-  color: #261F40;
+  color: var(--text-color);
   display: block;
   font-size: 1rem;
   font-weight: 600;
@@ -66,21 +66,21 @@ li a {
   text-transform: uppercase;
   text-decoration: none;
   transition: 0.3s;
-  border: solid 1px #261F40;
+  border: solid 1px var(--text-color);
   border-radius: 1rem;
   padding: 0.5rem 1rem;
   overflow: hidden;
 }
 
-li a:hover {
-  color: #ffc576;
+.btn-link:hover {
+  color: var(--text-subtitle-color);
 }
 
 @media screen and (min-width: 360px) and (max-width: 640px)  {
-  li a {
+  .btn-link {
     cursor: pointer;
-    background-color: #261F40;
-    color: #ffc576;
+    background-color: var(--text-color);
+    color: var(--text-subtitle-color);
   }
 }
 </style>

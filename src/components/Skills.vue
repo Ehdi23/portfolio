@@ -1,9 +1,9 @@
 <template>
-  <div class="skills-title" ref="skillsTitleRef" data-delay="1">
-    <div class="title">Mes Compétences</div>
-    <div class="subtitle">Services</div>
-  </div>
   <section class="skills-section">
+    <div class="skills-title" ref="skillsTitleRef" data-delay="1">
+      <div class="title">Mes Compétences</div>
+      <div class="subtitle">Services</div>
+    </div>
     <div class="skills-section__container">
       <div class="skills-section__content">
         <div class="skills-circle">
@@ -168,8 +168,7 @@ const skillsLogoRef = ref(null);
 const stackDescRef = ref(null);
 
 const stackDescription =
-  "Je suis un développeur web full-stack passionné par la technologie et l'innovation. J'ai une expérience significative dans le développement d'applications web et mobiles, en utilisant des technologies modernes telles que PHP, JavaScript, Laravel, et VueJs. Je suis également spécialisé dans la conception et le développement de sites web personnalisés, d'applications web, et de solutions e-commerce, pour répondre aux besoins de mes clients et leur offrir une expérience utilisateur exceptionnelle.";
-
+  "Développeur web fullstack passionné par Laravel et Vue.js, j'ai acquis une solide expérience en développant des applications web performantes et scalables. Ma formation O'clock, couplée à une passion pour l'autoapprentissage, m'a permis de maîtriser les technologies clés du développement web moderne. Spécialisé dans le développement backend, j'ai conçu une application de réservation de taxis en utilisant Laravel et Vue.js. Je suis également à l'aise avec la mise en place d'API RESTful, la gestion de bases de données relationnelles et l'intégration de systèmes tiers. Enthousiaste et proactif, je suis toujours à la recherche de nouvelles solutions pour améliorer les performances et la fiabilité des applications. Je suis particulièrement intéressé par les problématiques liées à l'optimisation du code, à la sécurité et à l'accessibilité.";
 onMounted(() => {
   const elements = [
     skillsTitleRef.value,
@@ -190,8 +189,8 @@ onMounted(() => {
           skillsCircle.classList.add("start-animation");
           setTimeout(() => {
             skillsCircle.classList.add("rotate-animation");
-          }, 3000);
-        }, 500);
+          }, 2000);
+        }, 1000);
       }
 
       // Activation des autres éléments
@@ -212,66 +211,59 @@ onMounted(() => {
 </script>
 
 <style>
-.skills-title.active,
-.figure-logo.active,
-.stack-description.active {
-  opacity: 1;
-  transform: translateY(0);
-  animation: fadeInUp 0.8s ease-out;
-  animation-fill-mode: both;
-}
-
-.skills-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4rem;
+/* Common styles */
+.skills-title,
+.figure-logo,
+.stack-description,
+.skills-section__content__item {
   opacity: 0;
   transform: translateY(1rem);
   transition: all 0.8s ease-out;
 }
 
+.skills-title.active,
+.figure-logo.active,
+.stack-description.active,
+.skills-circle.start-animation .skills-section__content__item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-title {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  margin-top: 4rem auto 0;
+}
+
 .skills-title .title {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 2rem;
+  font-weight: 600;
   margin-bottom: 1rem;
-  color: #261f40;
+  color: var(--text-title-color);
+  text-transform: uppercase;
 }
 
 .skills-title .subtitle {
   font-size: 2.5rem;
   font-weight: 600;
-  color: #ffc576;
-}
-
-.skills-section__title.heading-1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #261f40;
+  color: var(--text-subtitle-color);
+  -webkit-text-stroke: #261f40 0.5px;
+  text-transform: uppercase;
 }
 
 .skills-section {
   max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin: 1rem auto 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: end;
   padding: 2rem 0;
 }
 
 .skills-section__container {
   display: flex;
-  flex-direction: row;
   width: 100%;
-}
-
-.skills-section__title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
 }
 
 .skills-section__content {
@@ -296,40 +288,31 @@ onMounted(() => {
   transform-origin: center;
   transform: translate(-50%, -50%);
   text-align: center;
-  opacity: 0;
   transition: transform 1.5s ease, opacity 1.5s ease;
 }
 
 .skills-section__content__item i {
   font-size: 3rem;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 0.5rem;
 }
 
 .skills-section__content__item p {
   font-size: 1.5rem;
-  color: #333;
+  color: var(--text-color);
 }
 
 .skills-circle .skills-section__content__item:nth-child(1) {
   transition-delay: 0.5s;
-  transform: translate(-50%, -50%) rotate(0deg) translate(0, 0);
 }
 .skills-circle .skills-section__content__item:nth-child(2) {
   transition-delay: 0.7s;
-  transform: translate(-50%, -50%) rotate(0deg) translate(0, 0);
 }
 .skills-circle .skills-section__content__item:nth-child(3) {
   transition-delay: 0.9s;
-  transform: translate(-50%, -50%) rotate(0deg) translate(0, 0);
 }
 .skills-circle .skills-section__content__item:nth-child(4) {
   transition-delay: 1.1s;
-  transform: translate(-50%, -50%) rotate(0deg) translate(0, 0);
-}
-
-.skills-circle.start-animation .skills-section__content__item {
-  opacity: 1;
 }
 
 .skills-circle.start-animation .skills-section__content__item:nth-child(1) {
@@ -358,107 +341,60 @@ onMounted(() => {
   }
 }
 
-.skills-section__content__item p {
-  color: #261f40;
-}
-
-.skills-section__logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
+/* Figure logo */
 .figure-logo {
   display: flex;
   justify-content: flex-end;
-  opacity: 0;
-  transform: translateY(1rem);
-  transition: all 0.8s ease-out;
+}
+
+.figure-logo img {
+  animation: upAndDown 2s linear infinite;
 }
 
 @keyframes upAndDown {
-  0% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
     transform: translateY(-1rem);
   }
-  100% {
-    transform: translateY(0);
-  }
 }
 
-.skills-section__logo img {
-  width: 90%;
-  height: auto;
-}
-
+/* Stack description */
 .stack-description {
   max-width: 1200px;
-  width: 100%;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: whitesmoke;
+  background-color: #e8e7e7;
   border-radius: 1rem;
   box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.25);
-  transform: translateY(1rem);
-  transition: all 0.8s ease-out;
-  opacity: 0;
 }
 
 .stack-description p {
   font-size: 1.2rem;
-  color: #261f40;
+  color: var(--text-color);
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes maintain {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(-360deg);
-  }
+/* SVG Animation */
+.skills-section__content__item svg {
+  animation: scale 1s linear infinite alternate;
 }
 
 @keyframes scale {
   0% {
     transform: scale(1.2);
   }
-
   100% {
     transform: scale(1);
   }
 }
 
-.skills-section__content__item svg {
-  animation: scale 1s linear infinite alternate;
-}
-
-[data-delay] {
-  animation-delay: calc(var(--delay) * 0.2s);
-}
-
+/* Responsive styles */
 @media screen and (min-width: 360px) and (max-width: 640px) {
   .skills-title {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
     margin-top: 0;
-    opacity: 0;
-    transform: translateY(1rem);
-    transition: all 0.8s ease-out;
+    align-items: start;
   }
 
   .skills-section__logo {
@@ -469,24 +405,15 @@ onMounted(() => {
     padding: 1rem;
   }
 
-  .stack-description p {
-    text-align: justify;
-  }
-
   .skills-circle {
     width: 80%;
     height: 80%;
-    display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
   }
 
   .skills-section__content {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
 
   .skills-circle.start-animation .skills-section__content__item:nth-child(1) {
@@ -502,13 +429,11 @@ onMounted(() => {
     transform: translate(-50%, -50%) rotate(270deg) translate(0, -90px);
   }
 
-  /* svg width and height 50px */
   .skills-section__content__item svg {
     width: 50px;
     height: 50px;
   }
 
-  /* button */
   .skills-section__content__item button {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;

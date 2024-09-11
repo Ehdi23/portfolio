@@ -6,12 +6,14 @@
       </div>
       <div class="hero-title" data-delay="2" ref="title">El Hadi EL GHOLEM</div>
       <div class="hero-description" data-delay="3" ref="description">
-        <p>Développeur Web Autodidacte Laravel & Vuejs</p>
+        <p>
+          développeur web full-stack passionné par la création
+          d'interfaces utilisateur et d'applications web performantes.
+        </p>
       </div>
       <div class="hero-button" data-delay="4" ref="button">
         <Button>
-          <router-link to="/">Télécharger mon CV</router-link>
-          <router-link to="/contact">Contact</router-link>
+          <router-link to="/contact" class="btn-link">Contact</router-link>
         </Button>
       </div>
     </div>
@@ -59,6 +61,17 @@ onMounted(() => {
 </script>
 
 <style>
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-title,
 .hero-subtitle,
 .hero-description,
@@ -67,22 +80,61 @@ onMounted(() => {
   opacity: 0;
   transform: translateY(1rem);
   animation: fadeInUp 0.8s ease-out;
-  animation-fill-mode: both; /* Ensure that the element remains in its final state */
+  animation-fill-mode: both;
 }
-  /* Dynamically apply animation delays */
-  [data-delay] {
-    animation-delay: calc(var(--delay) * 0.2s);
-  }
 
+[data-delay] {
+  animation-delay: calc(var(--delay) * 0.2s);
+}
+
+/* Common styling */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  margin: 4rem auto;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 70%;
+}
+
+.hero-subtitle {
+  color: var(--text-subtitle-color);
+  font-weight: 600;
+}
+
+.hero-title {
+  color: var(--text-title-color);
+  font-family: Playfair Display, serif;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.hero-description p {
+  color: var(--text-color);
+  font-weight: 500;
+  text-align: justify;
+  text-transform: capitalize;
+}
+
+.hero-button {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: start;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Large screens */
 @media screen and (min-width: 1099px) {
   .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    max-width: 1035px;
-    width: 100%;
-    margin: 0 auto;
+    max-width: 1200px;
     min-height: 85vh;
   }
 
@@ -90,36 +142,23 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 100%;
+    width: 60%;
   }
 
   .hero-subtitle {
-    color: #ffc576;
     font-size: 3rem;
-    font-weight: 600;
+    -webkit-text-stroke: #261f40 0.5px;
   }
 
   .hero-title {
-    color: #261f40;
-    font-family: Playfair Display, serif;
     font-size: 3.5rem;
-    line-height: 1;
-    font-weight: 600;
     margin: 8px 0 16px;
+    width: 35rem;
   }
 
   .hero-description p {
-    font-size: 1.5rem;
-    color: #261f40;
-    font-weight: 600;
-  }
-
-  .hero-button {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: start;
-    gap: 2rem;
-    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 400;
   }
 
   .hero-button .btn-group .btn {
@@ -128,141 +167,83 @@ onMounted(() => {
 
   .hero-illustration {
     display: flex;
-    width: 50%;
+    justify-content: center;
+    width: 30%;
   }
 
-  .hero-illustration figure {
-    width: 50%;
+  .hero-illustration figure img {
+    width: 30rem;
+    height: auto;
   }
 }
 
+/* Medium screens */
 @media screen and (min-width: 641px) and (max-width: 1098px) {
   .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
     max-width: 1035px;
-    width: 100%;
-    margin: 0 auto;
     padding: 2rem 0;
     min-height: 85vh;
   }
 
-  .hero__container {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    margin: 8px 0 16px;
+  }
+
+  .hero-description p {
+    font-size: 1.5rem;
+  }
+
+  .hero-button {
     gap: 1rem;
-    width: 100%;
+  }
+
+  .hero-button .btn-group .btn {
+    min-width: 23rem;
   }
 
   .hero-illustration figure img {
     width: 100%;
     height: auto;
   }
-
-  .hero-subtitle {
-    color: #ffc576;
-    font-size: 2rem;
-    font-weight: 600;
-  }
-
-  .hero-title {
-    color: #261f40;
-    font-family: Playfair Display, serif;
-    font-size: 2.5rem;
-    line-height: 1;
-    font-weight: 700;
-    margin: 8px 0 16px;
-  }
-
-  .hero-description p {
-    font-size: 1.5rem;
-    color: #261f40;
-    font-weight: 600;
-  }
-
-  .hero-button {
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .hero-button .btn-group .btn {
-    flex-direction: row;
-    min-width: 23rem;
-  }
 }
 
+/* Small screens */
 @media screen and (min-width: 360px) and (max-width: 640px) {
   .hero {
     min-height: 70vh;
   }
 
   .hero__container {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-    height: 40rem;
+    padding-left: 1rem;
   }
 
   .hero-illustration {
     display: none;
   }
 
-  .hero-title,
-  .hero-subtitle,
-  .hero-description,
-  .hero-button {
-    opacity: 0;
-    transform: translateY(1rem);
-    animation: fade-in 0.8s ease-out;
-    animation-fill-mode: both; /* Ensure that the element remains in its final state */
-  }
-
   .hero-title {
-    font-size: 4rem;
+    width: 100%;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #261f40;
   }
 
   .hero-subtitle {
-    color: #ffc576;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 700;
+    -webkit-text-stroke: var(--text-color) 0.2px;
   }
 
   .hero-description p {
     font-size: 1rem;
-    color: #261f40;
-    font-weight: 600;
-  }
-
-  [data-delay] {
-    animation-delay: calc(var(--delay) * 0.2s);
   }
 
   .hero-button {
     display: none;
-  }
-
-  .hero-button .btn-group .btn a {
-    min-width: 8rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 3rem;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: .5rem 1rem;
   }
 }
 </style>

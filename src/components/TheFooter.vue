@@ -15,12 +15,12 @@
               <a
                 href="https://www.linkedin.com/in/el-hadi-el-gholem-789a7a270/"
                 target="_blank"
-                class="linkedin-button"
+                class="linkedin-button btn-link"
               >
                 <i class="fab fa-linkedin"></i>
                 LinkedIn
               </a>
-              <a href="https://x.com/e_gholem" target="_blank" class="x-button">
+              <a href="https://x.com/e_gholem" target="_blank" class="x-button btn-link">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -39,7 +39,7 @@
               <a
                 href="https://github.com/Ehdi23"
                 target="_blank"
-                class="github-button"
+                class="github-button btn-link"
               >
                 <i class="fab fa-github"></i>
                 GitHub

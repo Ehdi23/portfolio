@@ -45,6 +45,7 @@ function closeNotification() {
   // Attendre la durée de l'animation avant de masquer complètement la notification
   setTimeout(() => {
     showNotification.value = false;
+    localStorage.setItem("notification", false);
   }, 1000); // Durée de l'animation CSS (500ms)
 }
 </script>
@@ -69,7 +70,7 @@ function closeNotification() {
     align-items: center;
     padding: 1rem 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 9000; /* S'assurer que la notification est au-dessus de tout le reste */
+    z-index: 9999; /* S'assurer que la notification est au-dessus de tout le reste */
     animation: fadeInDown 0.8s ease-in-out forwards;
     transition: opacity 0.5s ease-in-out; /* Ajoutez une transition pour le fondu */
   }
@@ -99,7 +100,7 @@ function closeNotification() {
 
   .notification p {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
     margin: 0;
     flex: 1;

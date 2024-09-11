@@ -1,13 +1,11 @@
 <template>
   <section class="services-section" id="services-section">
-    <div class="services-section__title">
-      <h2>Mes Projets Professionnel</h2>
-    </div>
+    <div class="services-section__title">Mes Projets Professionnel</div>
     <div class="services-section__container">
       <div class="services-section__caption">
         <figure>
           <img
-            src="../assets/screenshot-2024-08-30.png"
+            src="../assets/capture-principale.png"
             alt="cab airport paris screenshot"
           />
         </figure>
@@ -16,13 +14,13 @@
         <p class="project-pro__title">Cab airport paris</p>
         <div class="project-pro__stack-used">
           <div class="stack-1 vuejs">
-          <i class="fab fa-vuejs"></i>
-          <p>VueJs</p>
-        </div>
-        <div class="stack-1 laravel">
-          <i class="fab fa-laravel"></i>
-          <p>Laravel</p>
-        </div>
+            <i class="fab fa-vuejs"></i>
+            <p>VueJs</p>
+          </div>
+          <div class="stack-1 laravel">
+            <i class="fab fa-laravel"></i>
+            <p>Laravel</p>
+          </div>
         </div>
       </div>
       <div class="services">
@@ -40,8 +38,8 @@
         </div>
       </div>
       <Button class="btn-class">
-        <a href="https://cabairportparis.com" target="_blank"
-          >Visiter le site</a
+        <router-link :to="{ name: 'projects' }" class="btn-link"
+          >Voir le projet</router-link
         >
       </Button>
     </div>
@@ -77,6 +75,34 @@ window.addEventListener("scroll", () => {
 </script>
 
 <style>
+#project-pro__text {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.project-pro__title {
+  text-transform: uppercase;
+  font-family: Playfair Display, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  color: #fb4e03;
+  line-height: 1;
+  position: relative;
+  display: flex;
+  align-self: center;
+}
+
+.stack-1.vuejs {
+  background-color: #42b883; /* Couleur Vue.js */
+}
+
+.stack-1.laravel {
+  background-color: #e3342f; /* Couleur Laravel */
+}
+
 /* Styles communs pour .services-section */
 .services-section {
   max-width: 1200px;
@@ -101,18 +127,11 @@ window.addEventListener("scroll", () => {
 .services-section__title {
   position: relative;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   align-self: flex-start;
-  color: #261f40;
+  color: var(--text-title-color);
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.5s ease;
-  margin-left: 7rem; /* Déplacé vers les media queries pour la réactivité */
-  width: 100%;
-}
-
-.services-section__title h2 {
   font-size: 2rem;
   font-weight: 700;
 }
@@ -131,7 +150,7 @@ window.addEventListener("scroll", () => {
   width: 100%;
   margin-top: 1rem;
   padding: 2rem;
-  background-color: whitesmoke;
+  background-color: #e8e7e7;
   z-index: -2;
   border-radius: 1rem;
   box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.25);
@@ -175,26 +194,6 @@ window.addEventListener("scroll", () => {
   padding: 0 1rem;
   gap: 1rem;
   opacity: 0;
-}
-
-.project-pro__title {
-  text-transform: uppercase;
-  font-family: Playfair Display, serif;
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 0.2rem;
-  color: #fb4e03;
-  line-height: 1;
-  position: relative;
-  display: flex;
-  align-self: center;
-}
-
-#project-pro__text {
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 1.8;
-  color: #261f40;
 }
 
 .project-button {
@@ -246,41 +245,26 @@ window.addEventListener("scroll", () => {
   font-weight: 600;
 }
 
-.stack-1.vuejs {
-  background-color: #42b883; /* Couleur Vue.js */
-}
-
-.stack-1.laravel {
-  background-color: #e3342f; /* Couleur Laravel */
-}
-
 .btn-class {
   padding-left: 1rem;
 }
 
-@media screen and (min-width: 641px) {
-  .services-section {
-    margin-bottom: 2rem;
-  }
+.services-section {
+  margin-bottom: 2rem;
+}
 
-  .services-section__title {
-    margin-left: 0; /* Ajusté pour les écrans plus petits */
-    padding-left: 3rem;
-  }
+.services-section__container {
+  flex-direction: column;
+  width: 100%;
+}
 
-  .services-section__container {
-    flex-direction: column;
-    width: 100%;
-  }
+.services-section__caption img {
+  width: 90%;
+  transform: scale(1); /* Ajusté pour afficher l'image normalement */
+}
 
-  .services-section__caption img {
-    width: 90%;
-    transform: scale(1); /* Ajusté pour afficher l'image normalement */
-  }
-
-  .services-section__caption figure {
-    text-align: center;
-  }
+.services-section__caption figure {
+  text-align: center;
 }
 
 @media screen and (min-width: 360px) and (max-width: 640px) {
@@ -288,17 +272,16 @@ window.addEventListener("scroll", () => {
     margin-left: 0; /* Ajusté pour les écrans plus petits */
     display: flex;
     justify-content: center;
-  }
-
-  .services-section__title h2 {
     font-size: 1.5rem;
-    text-align: center;
+    font-weight: 700;
   }
 
   .services-section__container {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    background-color: #e8e7e7;
+    padding: 1rem;
   }
 
   .services-section__caption img {
@@ -322,16 +305,12 @@ window.addEventListener("scroll", () => {
   .project-pro__stack {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-left: 0;
-    align-self: center;
+    padding-left: 1rem;
+    align-self: flex-start;
   }
 
   .project-pro__stack-used {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: start;
   }
 
   .stack-1 p {
@@ -342,16 +321,12 @@ window.addEventListener("scroll", () => {
     padding-left: 0;
   }
 
-  .services-section__container {
-    padding: 1rem;
-  }
-
   .btn-class .btn a {
     min-width: 8rem;
     height: 3rem;
     font-size: 1rem;
     font-weight: 500;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
   }
 }
 </style>
