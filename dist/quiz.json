@@ -1,0 +1,44 @@
+{
+    "title": "Questionnaire sur le Football",
+    "minimum_score": 4,
+    "success_message": "Félicitations! Vous êtes un véritable Fan de Foot!",
+    "failure_message": "Dommage! Vous devriez regarder plus de matchs.",
+    
+    "questions" : [
+        {
+            "question": "Qui a remporté la Coupe du Monde 2018?",
+            "choices": ["France", "Croatie", "Brésil", "Belgique"],
+            "correct_answer": "France"
+        },
+        {
+            "question": "Quel joueur a remporté le Ballon d'Or 2019?",
+            "choices": ["Lionel Messi", "Cristiano Ronaldo", "Virgil Van Dijk", "Sadio Mané"],
+            "correct_answer": "Lionel Messi"
+        },
+        {
+            "question": "Quel club a remporté la Ligue des Champions en 2019?",
+            "choices": ["Liverpool", "Tottenham", "Barcelone", "Ajax"],
+            "correct_answer": "Liverpool"
+        },
+        {
+            "question": "Qui a remporté la Coupe d'Afrique des Nations en 2019?",
+            "choices": ["Algérie", "Sénégal", "Nigeria", "Tunisie"],
+            "correct_answer": "Algérie"
+        },
+        {
+            "question": "Quel pays a remporté la Copa America en 2019?",
+            "choices": ["Brésil", "Argentine", "Chili", "Uruguay"],
+            "correct_answer": "Brésil"
+        },
+        {
+            "question": "Qui est le meilleur buteur de l'histoire de la Ligue des Champions?",
+            "choices": ["Cristiano Ronaldo", "Lionel Messi", "Raúl", "Robert Lewandowski"],
+            "correct_answer": "Cristiano Ronaldo"
+        },
+        {
+            "question": "Quel joueur est surnommé 'El Pibe de Oro'?",
+            "choices": ["Diego Maradona", "Lionel Messi", "Ronaldinho", "Garrincha"],
+            "correct_answer": "Diego Maradona"
+        }
+    ]
+}
