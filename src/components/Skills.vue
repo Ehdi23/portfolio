@@ -1,6 +1,6 @@
 <template>
   <section class="skills-section">
-    <div class="skills-title" ref="skillsTitleRef" data-delay="1">
+    <div class="skills-title" ref="skillsTitleRef" data-delay="0.3">
       <div class="title">Mes Compétences</div>
       <div class="subtitle">Services</div>
     </div>
@@ -149,12 +149,12 @@
         </div>
       </div>
       <div class="skills-section__logo">
-        <figure class="figure-logo" ref="skillsLogoRef" data-delay="2">
+        <figure class="figure-logo" ref="skillsLogoRef" data-delay="0.6">
           <img src="../assets/geek-fennec.png" alt="" />
         </figure>
       </div>
     </div>
-    <div class="stack-description" ref="stackDescRef" data-delay="3">
+    <div class="stack-description" ref="stackDescRef" data-delay="0.9">
       <p>{{ stackDescription }}</p>
     </div>
   </section>
@@ -178,19 +178,21 @@ onMounted(() => {
 
   window.addEventListener("scroll", () => {
     const skillsSection = document.querySelector(".skills-section");
+    if (!skillsSection) return;
+
     const skillsSectionPosition = skillsSection.getBoundingClientRect().top;
     const screenPosition = window.innerHeight / 1.3;
 
     if (skillsSectionPosition < screenPosition) {
       // Animation du cercle de compétences
       const skillsCircle = document.querySelector(".skills-circle");
-      if (!skillsCircle.classList.contains("start-animation")) {
+      if (skillsCircle && !skillsCircle.classList.contains("start-animation")) {
         setTimeout(() => {
           skillsCircle.classList.add("start-animation");
           setTimeout(() => {
             skillsCircle.classList.add("rotate-animation");
-          }, 2000);
-        }, 1000);
+          }, 1000);
+        }, 300);
       }
 
       // Activation des autres éléments
@@ -201,7 +203,7 @@ onMounted(() => {
           if (!element.classList.contains("active")) {
             setTimeout(() => {
               element.classList.add("active");
-            }, delay * 500); // Convertir secondes en millisecondes
+            }, delay * 200); // Convertir secondes en millisecondes
           }
         }
       });
@@ -278,7 +280,6 @@ onMounted(() => {
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
 }
 
 .skills-section__content__item {
@@ -303,16 +304,16 @@ onMounted(() => {
 }
 
 .skills-circle .skills-section__content__item:nth-child(1) {
-  transition-delay: 0.5s;
+  transition-delay: 0.2s;
 }
 .skills-circle .skills-section__content__item:nth-child(2) {
-  transition-delay: 0.7s;
+  transition-delay: 0.3s;
 }
 .skills-circle .skills-section__content__item:nth-child(3) {
-  transition-delay: 0.9s;
+  transition-delay: 0.4s;
 }
 .skills-circle .skills-section__content__item:nth-child(4) {
-  transition-delay: 1.1s;
+  transition-delay: 0.5s;
 }
 
 .skills-circle.start-animation .skills-section__content__item:nth-child(1) {
@@ -366,14 +367,15 @@ onMounted(() => {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: #e8e7e7;
-  border-radius: 1rem;
-  box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-background-soft);
+  box-shadow: 10px 10px 5px 5px var(--card-shadow);
+  border: 1px solid var(--color-border);
 }
 
 .stack-description p {
   font-size: 1.2rem;
   color: var(--text-color);
+  line-height: 1.8;
 }
 
 /* SVG Animation */
@@ -401,12 +403,25 @@ onMounted(() => {
     align-items: start;
   }
 
+  .skills-title .title {
+    font-size: 1.5rem;
+  }
+
+  .skills-title .subtitle {
+    font-size: 2rem;
+  }
+
   .skills-section__logo {
     display: none;
   }
 
   .stack-description {
     padding: 1rem;
+  }
+
+  .stack-description p {
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .skills-circle {
@@ -438,9 +453,57 @@ onMounted(() => {
     height: 50px;
   }
 
+  .skills-section__content__item p {
+    font-size: 1.2rem;
+  }
+
   .skills-section__content__item button {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  .skills-section {
+    padding: 0.75rem;
+  }
+
+  .skills-title .title {
+    font-size: 1.25rem;
+  }
+
+  .skills-title .subtitle {
+    font-size: 1.75rem;
+  }
+
+  .stack-description {
+    padding: 0.75rem;
+  }
+
+  .stack-description p {
+    font-size: 0.9rem;
+  }
+
+  .skills-circle.start-animation .skills-section__content__item:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(0deg) translate(0, -70px);
+  }
+  .skills-circle.start-animation .skills-section__content__item:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(90deg) translate(0, -70px);
+  }
+  .skills-circle.start-animation .skills-section__content__item:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(180deg) translate(0, -70px);
+  }
+  .skills-circle.start-animation .skills-section__content__item:nth-child(4) {
+    transform: translate(-50%, -50%) rotate(270deg) translate(0, -70px);
+  }
+
+  .skills-section__content__item svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .skills-section__content__item p {
+    font-size: 1rem;
   }
 }
 </style>

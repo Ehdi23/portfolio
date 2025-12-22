@@ -1,7 +1,7 @@
 <template>
   <div class="btn-group">
     <li class="btn">
-        <slot class="btn-link"></slot>
+      <slot></slot>
     </li>
   </div>
 </template>
@@ -17,6 +17,11 @@ li {
   align-items: center;
   flex-direction: row;
   gap: 2rem;
+  pointer-events: none;
+}
+
+.btn > * {
+  pointer-events: auto;
 }
 
 .btn-link::before,
@@ -39,7 +44,7 @@ li {
 }
 
 .btn-link::after {
-  background-color: var(--text-color);
+  background-color: var(--background-element-hover-color);
 }
 
 .btn-link:hover {
@@ -67,16 +72,18 @@ li {
   text-decoration: none;
   transition: 0.3s;
   border: solid 1px var(--text-color);
-  border-radius: 1rem;
   padding: 0.5rem 1rem;
   overflow: hidden;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
 }
 
 .btn-link:hover {
   color: var(--text-subtitle-color);
 }
 
-@media screen and (min-width: 360px) and (max-width: 640px)  {
+@media screen and (min-width: 360px) and (max-width: 640px) {
   .btn-link {
     cursor: pointer;
     background-color: var(--text-color);

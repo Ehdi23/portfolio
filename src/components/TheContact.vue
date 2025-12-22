@@ -7,7 +7,7 @@
         <div class="form-container">
           <form ref="form" @submit.prevent="sendEmail">
             <div class="form-group inputs">
-              <label for="name">Name</label>
+              <label for="name">Nom</label>
               <input type="text" id="name" v-model="name" required />
               <label for="email">Email</label>
               <input type="email" id="email" v-model="email" required />
@@ -63,11 +63,23 @@ const sendEmail = () => {
 </script>
 
 <style>
+@keyframes fadeSheet {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
 /* Styles pour les écrans supérieurs à 1025px */
 @media screen and (min-width: 1025px) {
   .submit {
     cursor: pointer;
-    z-index: 99;
+    position: relative;
+    z-index: 3;
   }
 
   .btn-link div {
@@ -78,7 +90,6 @@ const sendEmail = () => {
   .container-contact {
     margin: 2rem auto 0;
     width: 80%;
-    border-radius: 1rem;
   }
 
   .form-container {
@@ -87,6 +98,7 @@ const sendEmail = () => {
     align-items: center;
     justify-content: center;
     padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .form-group,
@@ -94,6 +106,7 @@ const sendEmail = () => {
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 50vh;
     align-items: start;
     justify-content: center;
   }
@@ -104,6 +117,8 @@ const sendEmail = () => {
     color: var(--text-subtitle-color);
     -webkit-text-stroke: var(--text-color) 0.2px;
     font-weight: 600;
+    transition: color 0.3s ease;
+    margin-bottom: 0.25rem;
   }
 
   input,
@@ -111,15 +126,26 @@ const sendEmail = () => {
     width: 100%;
     padding: 0.5rem;
     margin: 0.5rem 0;
-    border-radius: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     outline: none;
     resize: none;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, background-color 0.3s ease,
+      color 0.3s ease;
+    font-family: inherit;
   }
 
   input:focus,
   textarea:focus {
-    border: 1px solid var(--text-color);
+    border: 2px solid var(--text-subtitle-color);
+    box-shadow: 0 0 0 3px rgba(255, 197, 118, 0.1);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-text);
+    opacity: 0.6;
   }
 
   .textarea {
@@ -183,15 +209,17 @@ const sendEmail = () => {
   .sheet {
     width: 88%;
     padding: 1rem 0;
-    height: 70vh;
-    background-color: whitesmoke;
+    height: 73vh;
+    background-color: var(--card-background);
     position: absolute;
     z-index: 0;
     bottom: 10%;
     left: 50%;
     transform: translate(-50%, 0);
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 1rem var(--card-shadow);
     animation: fadeSheet 1s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-border);
   }
 
   .contact-page {
@@ -215,7 +243,8 @@ const sendEmail = () => {
 @media screen and (min-width: 641px) and (max-width: 1024px) {
   .submit {
     cursor: pointer;
-    z-index: 99;
+    position: relative;
+    z-index: 3;
   }
 
   .btn-link div {
@@ -226,7 +255,6 @@ const sendEmail = () => {
   .container-contact {
     margin: 10rem auto 0;
     width: 80%;
-    border-radius: 1rem;
   }
 
   .form-container {
@@ -235,6 +263,7 @@ const sendEmail = () => {
     align-items: center;
     justify-content: center;
     padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .form-group,
@@ -250,6 +279,8 @@ const sendEmail = () => {
     font-size: 1rem;
     color: var(--text-subtitle-color);
     font-weight: 600;
+    transition: color 0.3s ease;
+    margin-bottom: 0.25rem;
   }
 
   input,
@@ -257,15 +288,26 @@ const sendEmail = () => {
     width: 100%;
     padding: 0.5rem;
     margin: 0.5rem 0;
-    border-radius: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     outline: none;
     resize: none;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, background-color 0.3s ease,
+      color 0.3s ease;
+    font-family: inherit;
   }
 
   input:focus,
   textarea:focus {
-    border: 1px solid var(--text-color);
+    border: 2px solid var(--text-subtitle-color);
+    box-shadow: 0 0 0 3px rgba(255, 197, 118, 0.1);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-text);
+    opacity: 0.6;
   }
 
   .textarea {
@@ -326,14 +368,16 @@ const sendEmail = () => {
     width: 88%;
     padding: 1rem 0;
     height: 41.5rem;
-    background-color: whitesmoke;
+    background-color: var(--card-background);
     position: absolute;
     z-index: 0;
     bottom: 10%;
     left: 50%;
     transform: translate(-50%, 0);
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 1rem var(--card-shadow);
     animation: fadeSheet 1s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-border);
   }
 
   .contact-page {
@@ -356,7 +400,8 @@ const sendEmail = () => {
 
   .submit {
     cursor: pointer;
-    z-index: 99;
+    position: relative;
+    z-index: 3;
   }
 
   .btn-link div {
@@ -367,7 +412,6 @@ const sendEmail = () => {
   .container-contact {
     margin: 10rem auto 0;
     width: 80%;
-    border-radius: 1rem;
   }
 
   .form-container {
@@ -391,6 +435,8 @@ const sendEmail = () => {
     font-size: 1rem;
     color: var(--text-subtitle-color);
     font-weight: 600;
+    transition: color 0.3s ease;
+    margin-bottom: 0.25rem;
   }
 
   input,
@@ -398,19 +444,112 @@ const sendEmail = () => {
     width: 100%;
     padding: 0.5rem;
     margin: 0.5rem 0;
-    border-radius: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     outline: none;
     resize: none;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, background-color 0.3s ease,
+      color 0.3s ease;
+    font-family: inherit;
   }
 
   input:focus,
   textarea:focus {
-    border: 1px solid var(--text-color);
+    border: 2px solid var(--text-subtitle-color);
+    box-shadow: 0 0 0 3px rgba(255, 197, 118, 0.1);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-text);
+    opacity: 0.6;
   }
 
   .textarea {
     width: 100%;
+  }
+
+  #envelope {
+    width: 100%;
+    max-width: 25rem;
+    height: 15rem;
+    background-color: #150d34;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    display: flex;
+  }
+
+  .right,
+  .left {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    border-bottom: 15rem solid;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    z-index: 1;
+  }
+
+  .right {
+    border-bottom-color: var(--text-color);
+    border-left: 25rem solid transparent;
+    right: 0;
+  }
+
+  .left {
+    border-bottom-color: #392c6a;
+    border-right: 25rem solid transparent;
+    left: 0;
+  }
+
+  #envelope::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 12.5rem solid transparent;
+    border-bottom: 10rem solid var(--text-color);
+    z-index: -1;
+  }
+
+  .sheet {
+    width: 95%;
+    padding: 1rem;
+    min-height: 30rem;
+    background-color: var(--card-background);
+    position: absolute;
+    z-index: 0;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    box-shadow: 0 0 1rem var(--card-shadow);
+    animation: fadeSheet 1s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-border);
+  }
+
+  .contact-page {
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .inputs {
+    width: 100%;
+  }
+
+  .form-group,
+  form {
+    height: auto;
   }
 }
 </style>

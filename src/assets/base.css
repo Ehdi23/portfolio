@@ -40,6 +40,8 @@
   --section-gap: 160px;
 
   --background-color: #fafafa;
+  --background-element-hover-color: #261f40;
+
   --text-color: #261f40;
   --text-subtitle-color: var(--vt-c-text-gold);
   --text-title-color: #261f40;
@@ -47,20 +49,39 @@
   --light-accent-color: #ccc;
   --accent-color: #abbaab;
   --blue-color: #2980b9;
+  
+  /* Couleurs pour les cartes et éléments */
+  --card-background: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: rgba(0, 0, 0, 0.2);
+  --overlay-background: rgba(0, 0, 0, 0.8);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
+/* Dark mode */
+:root.dark {
+  --color-background: var(--vt-c-black);
+  --color-background-soft: var(--vt-c-black-soft);
+  --color-background-mute: var(--vt-c-black-mute);
 
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
+  --color-border: var(--vt-c-divider-dark-2);
+  --color-border-hover: var(--vt-c-divider-dark-1);
 
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
+  --color-heading: var(--vt-c-text-dark-1);
+  --color-text: var(--vt-c-text-dark-2);
+  
+  --background-color: #1a1a1a;
+  --background-element-hover-color: #242424;
+  --text-color: #EDEDED;
+  --text-title-color: #ffffff;
+  --text-hover-color: #ffffff;
+  --light-accent-color: #555;
+  --accent-color: #abbaab;
+  
+  /* Couleurs pour les cartes et éléments en dark mode */
+  --card-background: #2a2a2a;
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: rgba(0, 0, 0, 0.5);
+  --overlay-background: rgba(0, 0, 0, 0.9);
 }
 
 *,
@@ -73,11 +94,11 @@
 
 body {
   min-height: 100vh;
-  color: #261F40;
-  background-color: #f2f2f2;
+  color: var(--text-color);
+  background-color: var(--background-color);
   transition:
-    color 0.5s,
-    background-color 0.5s;
+    color 0.5s ease,
+    background-color 0.5s ease;
   line-height: 1.6;
   font-size: 16px;
   text-rendering: optimizeLegibility;

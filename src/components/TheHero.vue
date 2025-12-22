@@ -1,24 +1,24 @@
 <template>
   <div class="hero">
     <div class="hero__container">
-      <div class="hero-subtitle" data-delay="1" ref="subtitle">
+      <div class="hero-subtitle" data-delay="0.2" ref="subtitle">
         Bonjour, je suis
       </div>
-      <div class="hero-title" data-delay="2" ref="title">El Hadi EL GHOLEM</div>
-      <div class="hero-description" data-delay="3" ref="description">
+      <div class="hero-title" data-delay="0.4" ref="title">El Hadi EL GHOLEM</div>
+      <div class="hero-description" data-delay="0.6" ref="description">
         <p>
           développeur web full-stack passionné par la création d'interfaces
           utilisateur et d'applications web performantes.
         </p>
       </div>
-      <div class="hero-button" data-delay="4" ref="button">
+      <div class="hero-button" data-delay="0.8" ref="button">
         <Button>
           <router-link to="/contact" class="btn-link">Contact</router-link>
         </Button>
       </div>
     </div>
     <div class="hero-illustration">
-      <figure class="logo-illustration" data-delay="5" ref="illustration">
+      <figure class="logo-illustration" data-delay="1" ref="illustration">
         <img
           src="../assets/[removal.ai]_7fdd3655-3a98-47e8-8d0d-c38e085c06cb-pixlr-image-generator-7af35ad6-a621-4513-87f7-c875de2c890c.png"
           alt=""
@@ -54,7 +54,7 @@ onMounted(() => {
 
       setTimeout(() => {
         el.classList.add("fade-in");
-      }, delay * 1000); // Convertir secondes en millisecondes
+      }, delay * 300); // Convertir secondes en millisecondes
     }
   });
 });
@@ -84,7 +84,7 @@ onMounted(() => {
 }
 
 [data-delay] {
-  animation-delay: calc(var(--delay) * 0.2s);
+  animation-delay: calc(var(--delay) * 0.1s);
 }
 
 /* Common styling */
@@ -216,10 +216,12 @@ onMounted(() => {
 @media screen and (min-width: 360px) and (max-width: 640px) {
   .hero {
     min-height: 25vh;
+    padding: 1rem 0;
   }
 
   .hero__container {
     padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .hero-illustration {
@@ -227,23 +229,52 @@ onMounted(() => {
   }
 
   .hero-title {
-    min-width: 22rem;
-    font-size: 2.2rem;
+    min-width: auto;
+    width: 100%;
+    font-size: 1.8rem;
     font-weight: 700;
+    word-wrap: break-word;
   }
 
   .hero-subtitle {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     -webkit-text-stroke: var(--text-color) 0.2px;
+    word-wrap: break-word;
   }
 
   .hero-description p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
   .hero-button {
     display: none;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 359px) {
+  .hero {
+    min-height: 20vh;
+    padding: 0.75rem 0;
+  }
+
+  .hero__container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .hero-description p {
+    font-size: 0.9rem;
   }
 }
 </style>

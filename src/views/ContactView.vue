@@ -1,21 +1,23 @@
 <template>
-  <TheHeader />
-  <div class="intro-container">
-    <div class="intro-container__texts">
-      <div id="title-contact">
-        <div class="title-contact">me contacter</div>
-        <div class="subtitle-contact"><h3>Obtenir un devis</h3></div>
-        <p>
-          Merci de donner un maximum de détail sur le projet afin que je puisse
-          évaluer correctement la charge de travail que représente votre projet.
-          Cela permettra aussi d'avoir un premier chiffrage au plus proche du
-          devis final.
-        </p>
+  <div class="contact-view">
+    <TheHeader />
+    <div class="intro-container">
+      <div class="intro-container__texts">
+        <div id="title-contact">
+          <div class="title-contact">me contacter</div>
+          <div class="subtitle-contact"><h3>Obtenir un devis</h3></div>
+          <p>
+            Merci de donner un maximum de détail sur le projet afin que je
+            puisse évaluer correctement la charge de travail que représente
+            votre projet. Cela permettra aussi d'avoir un premier chiffrage au
+            plus proche du devis final.
+          </p>
+        </div>
       </div>
+      <TheContact />
     </div>
-    <TheContact />
+    <TheFooter />
   </div>
-  <TheFooter />
 </template>
 
 <script setup>
@@ -29,23 +31,25 @@ import TheFooter from "@/components/TheFooter.vue";
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  max-width: 100%;
-  margin: 5rem auto 0;
-  background-color: whitesmoke;
-  border-radius: 1rem;
-  box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.25);
+  padding: 2rem 1rem;
+  max-width: 1400px;
+  margin: 3rem auto;
+  gap: 3rem;
+  flex-wrap: wrap;
 }
 
 .intro-container__texts {
-  margin: 1rem;
-  padding: 1rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 50%;
-  text-align: center;
-  background-color: transparent;
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  text-align: left;
+  background: var(--card-background);
+  box-shadow: 0 10px 30px var(--card-shadow);
+  border: 1px solid var(--color-border);
 }
 
 .intro-container__texts p {
@@ -84,8 +88,16 @@ import TheFooter from "@/components/TheFooter.vue";
 }
 
 @media screen and (max-width: 640px) {
+  .intro-container {
+    flex-direction: column;
+    padding: 1rem;
+    margin: 2rem auto;
+  }
+
   .intro-container__texts {
     width: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
   }
 
   #title-contact {
@@ -103,18 +115,13 @@ import TheFooter from "@/components/TheFooter.vue";
     gap: 2rem;
     flex-direction: column;
     padding: 2rem;
-    background-color: transparent;
-    box-shadow: none;
-    width: 100%;
-    margin: 0 auto;
+    margin: 2rem auto;
   }
 
   .intro-container__texts {
     width: 100%;
+    max-width: 600px;
     padding: 2rem;
-    background-color: whitesmoke;
-    border-radius: 1rem;
-    box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.25);
   }
 
   .title-contact {
@@ -129,22 +136,16 @@ import TheFooter from "@/components/TheFooter.vue";
 /* Pour les écrans supérieurs à 1025px */
 @media screen and (min-width: 1025px) {
   .intro-container {
-    gap: 2rem;
+    gap: 3rem;
     flex-direction: row;
-    padding: 2rem;
-    background-color: transparent;
-    box-shadow: none;
-    max-width: 90%;
-    margin: 0 auto;
-    min-height: 100vh;
+    padding: 3rem;
+    margin: 4rem auto;
   }
 
   .intro-container__texts {
-    max-width: 80%;
-    padding: 2rem;
-    background-color: whitesmoke;
-    border-radius: 1rem;
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
+    flex: 0 0 45%;
+    max-width: 500px;
+    padding: 2.5rem;
   }
 
   .title-contact {
@@ -152,30 +153,33 @@ import TheFooter from "@/components/TheFooter.vue";
   }
 
   .intro-container__texts p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
+    line-height: 1.8;
   }
 }
 
-/* Ajout pour les écrans plus petits */
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 480px) {
   .intro-container {
-    flex-direction: column;
-    padding: 1rem;
-    max-width: 95%;
+    padding: 0.75rem;
+    margin: 1.5rem auto;
   }
 
   .intro-container__texts {
-    max-width: 90%;
     padding: 1rem;
   }
 
   .title-contact {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+  }
+
+  .subtitle-contact h3 {
+    font-size: 1rem;
   }
 
   .intro-container__texts p {
     font-size: 0.9rem;
+    line-height: 1.6;
   }
 }
 </style>
