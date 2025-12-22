@@ -433,6 +433,11 @@ onMounted(() => {
   color: var(--text-color);
   transition: all 0.3s ease;
   margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+.dark .back-button {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .back-button .icon {
@@ -484,6 +489,11 @@ onMounted(() => {
   font-size: 1rem;
   font-weight: 600;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+}
+
+.dark .tech-badge-large {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .tech-badge-large i {
@@ -513,12 +523,21 @@ onMounted(() => {
   text-decoration: none;
   transition: all 0.3s ease;
   border: 2px solid transparent;
+  border-radius: 0.5rem;
+}
+
+.dark .project-link {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .project-link--website {
   background: var(--text-subtitle-color);
   color: var(--card-background);
   border-color: var(--text-subtitle-color);
+}
+
+.dark .project-link--website {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .project-link--website:hover {
@@ -528,10 +547,18 @@ onMounted(() => {
   box-shadow: 0 4px 12px rgba(255, 197, 118, 0.3);
 }
 
+.dark .project-link--website:hover {
+  border: solid 1px var(--text-subtitle-color);
+}
+
 .project-link--github {
   background: var(--card-background);
   color: var(--text-color);
   border-color: var(--color-border);
+}
+
+.dark .project-link--github {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .project-link--github:hover {
@@ -542,16 +569,28 @@ onMounted(() => {
   box-shadow: 0 4px 12px rgba(36, 41, 46, 0.3);
 }
 
+.dark .project-link--github:hover {
+  border: solid 1px var(--text-subtitle-color);
+}
+
 .project-link--demo {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border-color: transparent;
 }
 
+.dark .project-link--demo {
+  border: solid 1px var(--text-subtitle-color);
+}
+
 .project-link--demo:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
   opacity: 0.9;
+}
+
+.dark .project-link--demo:hover {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .project-link .icon {
@@ -568,6 +607,7 @@ onMounted(() => {
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   animation: fadeInUp 0.8s ease 0.2s both;
+  border-radius: 0.5rem;
 }
 
 .project-detail__hero-image img {
@@ -632,6 +672,7 @@ onMounted(() => {
   padding: 2rem;
   box-shadow: 0 10px 30px var(--card-shadow);
   transition: transform 0.3s ease;
+  border-radius: 0.5rem;
 }
 
 .problem-box {
@@ -643,6 +684,10 @@ onMounted(() => {
   border: 1px solid var(--color-border);
 }
 
+.dark .problem-box {
+  border: solid 1px var(--text-subtitle-color);
+}
+
 .solution-box {
   background: linear-gradient(
     135deg,
@@ -652,9 +697,18 @@ onMounted(() => {
   border: 1px solid var(--color-border);
 }
 
+.dark .solution-box {
+  border: solid 1px var(--text-subtitle-color);
+}
+
 .problem-box:hover,
 .solution-box:hover {
   transform: translateY(-5px);
+}
+
+.dark .problem-box:hover,
+.dark .solution-box:hover {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .problem-box h3,
@@ -701,11 +755,20 @@ onMounted(() => {
   transform: translateY(20px);
   animation: fadeInUp 0.5s ease forwards;
   animation-delay: var(--delay);
+  border-radius: 0.5rem;
+}
+
+.dark .feature-card {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px var(--card-shadow-hover);
+}
+
+.dark .feature-card:hover {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .feature-card .icon {
@@ -735,6 +798,11 @@ onMounted(() => {
   box-shadow: 0 5px 20px var(--card-shadow);
   border: 1px solid var(--color-border);
   background: var(--card-background);
+  border-radius: 0.5rem;
+}
+
+.dark .gallery-item {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .gallery-item img {
@@ -781,6 +849,16 @@ onMounted(() => {
   padding: 2rem;
   box-shadow: 0 5px 20px var(--card-shadow);
   border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.dark .backend-content {
+  border: solid 1px var(--text-subtitle-color);
+}
+
+.dark .backend-content:hover {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .backend-content p {
@@ -804,10 +882,18 @@ onMounted(() => {
   transition: all 0.3s ease;
 }
 
+.dark .challenge-card {
+  border: solid 1px var(--text-subtitle-color);
+}
+
 .challenge-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px var(--card-shadow-hover);
   border-color: var(--text-subtitle-color);
+}
+
+.dark .challenge-card:hover {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .challenge-card__icon {
@@ -824,6 +910,7 @@ onMounted(() => {
   color: var(--card-background);
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
 }
 
 .challenge-card__title {
@@ -845,6 +932,16 @@ onMounted(() => {
   padding: 2rem;
   box-shadow: 0 5px 20px var(--card-shadow);
   border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.dark .learnings-content {
+  border: solid 1px var(--text-subtitle-color);
+}
+
+.dark .learnings-content:hover {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .learnings-list {
@@ -863,6 +960,11 @@ onMounted(() => {
   padding: 1rem;
   background: var(--color-background-soft);
   transition: all 0.3s ease;
+  border-radius: 0.5rem;
+}
+
+.dark .learnings-list li {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .learnings-list li:hover {
@@ -903,6 +1005,7 @@ onMounted(() => {
   max-width: 90%;
   max-height: 90%;
   object-fit: contain;
+  border-radius: 0.5rem;
 }
 
 .lightbox-close,
@@ -918,6 +1021,7 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 0.5rem;
 }
 
 .lightbox-close .icon,

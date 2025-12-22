@@ -82,6 +82,9 @@
   --card-shadow: rgba(0, 0, 0, 0.3);
   --card-shadow-hover: rgba(0, 0, 0, 0.5);
   --overlay-background: rgba(0, 0, 0, 0.9);
+  
+  /* Bordures en dark mode */
+  --color-border: var(--text-subtitle-color);
 }
 
 *,

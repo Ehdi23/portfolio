@@ -274,6 +274,11 @@ onMounted(() => {
   grid-template-columns: 1.2fr 1fr;
   gap: 0;
   min-height: 400px;
+  border-radius: 0.5rem;
+}
+
+.dark .project-item {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .project-item--reverse {
@@ -294,12 +299,17 @@ onMounted(() => {
   border-color: var(--text-subtitle-color);
 }
 
+.dark .project-item:hover {
+  border: solid 1px var(--text-subtitle-color);
+}
+
 .project-item__image {
   position: relative;
   overflow: hidden;
   aspect-ratio: auto;
   cursor: pointer;
   height: 100%;
+  border-radius: 0.5rem;
 }
 
 .project-item__image img {
@@ -364,6 +374,10 @@ onMounted(() => {
   border-top: 1px solid var(--color-border);
 }
 
+.dark .project-item__footer {
+  border-top: solid 1px var(--text-subtitle-color);
+}
+
 .project-item__title {
   font-size: 2.2rem;
   font-weight: 700;
@@ -402,6 +416,11 @@ onMounted(() => {
   font-size: 0.875rem;
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+}
+
+.dark .tech-badge {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .tech-badge i {
@@ -430,6 +449,11 @@ onMounted(() => {
   transition: all 0.3s ease;
   padding: 0.5rem;
   background: var(--color-background-soft);
+  border-radius: 0.5rem;
+}
+
+.dark .feature-tag {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .feature-tag:hover {
@@ -458,12 +482,21 @@ onMounted(() => {
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
+  border-radius: 0.5rem;
+}
+
+.dark .project-item__button {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .project-item__button:hover {
   background: transparent;
   color: var(--text-subtitle-color);
   transform: translateX(5px);
+}
+
+.dark .project-item__button:hover {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .project-item__button .icon {
@@ -492,6 +525,11 @@ onMounted(() => {
   border: 2px solid var(--color-border);
   background: var(--color-background-soft);
   color: var(--text-color);
+  border-radius: 0.5rem;
+}
+
+.dark .project-item-link {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .project-item-link .icon {
@@ -505,6 +543,10 @@ onMounted(() => {
   border-color: var(--text-subtitle-color);
   transform: translateY(-3px) scale(1.1);
   box-shadow: 0 4px 12px rgba(255, 197, 118, 0.3);
+}
+
+.dark .project-item-link:hover {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .project-item-link:nth-child(2):hover {

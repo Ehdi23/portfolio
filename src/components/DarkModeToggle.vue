@@ -59,13 +59,44 @@ const { isDarkMode, toggleDarkMode } = useDarkMode();
   justify-content: center;
   width: 3rem;
   height: 3rem;
-  border: 2px solid var(--text-color);
+  border: 1px solid var(--text-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .dark-mode-toggle {
+  border: solid 1px var(--text-subtitle-color);
   background: transparent;
   color: var(--text-color);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.dark .dark-mode-toggle:hover {
+  border: solid 1px var(--text-subtitle-color);
+  background: var(--background-element-hover-color);
+  box-shadow: 0 0 10px rgba(255, 197, 118, 0.4),
+    0 0 20px rgba(255, 197, 118, 0.3), 0 0 30px rgba(255, 197, 118, 0.2),
+    inset 0 0 10px rgba(255, 197, 118, 0.1);
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .dark-mode-toggle:active {
+  transform: scale(0.95);
+}
+
+.dark .dark-mode-toggle:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.dark .dark-mode-toggle:hover .icon {
+  transform: rotate(15deg);
 }
 
 .dark-mode-toggle .icon {
@@ -77,8 +108,7 @@ const { isDarkMode, toggleDarkMode } = useDarkMode();
 .dark-mode-toggle:hover {
   transform: scale(1.1);
   background: var(--text-color);
-  color: var(--background-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: var(--text-subtitle-color);
 }
 
 .dark-mode-toggle:active {
@@ -118,8 +148,10 @@ const { isDarkMode, toggleDarkMode } = useDarkMode();
 
 :global(.dark) .dark-mode-toggle:hover {
   background: var(--text-color);
-  color: var(--background-color);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  color: var(--text-subtitle-color);
+  box-shadow: 0 0 10px rgba(255, 197, 118, 0.4),
+    0 0 20px rgba(255, 197, 118, 0.3), 0 0 30px rgba(255, 197, 118, 0.2),
+    inset 0 0 10px rgba(255, 197, 118, 0.1);
 }
 
 @media screen and (max-width: 640px) {
@@ -131,6 +163,32 @@ const { isDarkMode, toggleDarkMode } = useDarkMode();
   .dark-mode-toggle .icon {
     width: 1rem;
     height: 1rem;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 640px) {
+  .dark-mode-toggle {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--background-element-hover-color);
+  }
+  .dark-mode-toggle .icon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--text-subtitle-color);
+  }
+}
+
+@media screen and (max-width: 359px) {
+  .dark-mode-toggle {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--background-element-hover-color);
+  }
+  .dark-mode-toggle .icon {
+    width: 0.8rem;
+    height: 0.8rem;
+    color: var(--text-subtitle-color);
   }
 }
 </style>

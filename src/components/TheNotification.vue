@@ -73,6 +73,7 @@ function closeNotification() {
     z-index: 9999; /* S'assurer que la notification est au-dessus de tout le reste */
     animation: fadeInDown 0.8s ease-in-out forwards;
     transition: opacity 0.5s ease-in-out; /* Ajoutez une transition pour le fondu */
+    border-radius: 0 0 0.5rem 0.5rem;
   }
 
   .notification.fade-out {
@@ -133,6 +134,7 @@ function closeNotification() {
     animation: tightToStretch 0.8s ease-in-out forwards;
     transition: opacity 0.5s ease-in-out;
     box-sizing: border-box; /* Inclut le padding dans la largeur */
+    border-radius: 0.5rem;
   }
 
   .notification p {

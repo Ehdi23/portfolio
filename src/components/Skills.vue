@@ -370,6 +370,11 @@ onMounted(() => {
   background-color: var(--color-background-soft);
   box-shadow: 10px 10px 5px 5px var(--card-shadow);
   border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+}
+
+.dark .stack-description {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .stack-description p {

@@ -134,12 +134,23 @@ const sendEmail = () => {
     transition: border-color 0.3s ease, background-color 0.3s ease,
       color 0.3s ease;
     font-family: inherit;
+    border-radius: 0.5rem;
+  }
+
+  .dark input,
+  .dark textarea {
+    border: solid 1px var(--text-subtitle-color);
   }
 
   input:focus,
   textarea:focus {
     border: 2px solid var(--text-subtitle-color);
     box-shadow: 0 0 0 3px rgba(255, 197, 118, 0.1);
+  }
+
+  .dark input:focus,
+  .dark textarea:focus {
+    border: solid 1px var(--text-subtitle-color);
   }
 
   input::placeholder,
@@ -296,12 +307,23 @@ const sendEmail = () => {
     transition: border-color 0.3s ease, background-color 0.3s ease,
       color 0.3s ease;
     font-family: inherit;
+    border-radius: 0.5rem;
+  }
+
+  .dark input,
+  .dark textarea {
+    border: solid 1px var(--text-subtitle-color);
   }
 
   input:focus,
   textarea:focus {
     border: 2px solid var(--text-subtitle-color);
     box-shadow: 0 0 0 3px rgba(255, 197, 118, 0.1);
+  }
+
+  .dark input:focus,
+  .dark textarea:focus {
+    border: solid 1px var(--text-subtitle-color);
   }
 
   input::placeholder,
@@ -452,12 +474,23 @@ const sendEmail = () => {
     transition: border-color 0.3s ease, background-color 0.3s ease,
       color 0.3s ease;
     font-family: inherit;
+    border-radius: 0.5rem;
+  }
+
+  .dark input,
+  .dark textarea {
+    border: solid 1px var(--text-subtitle-color);
   }
 
   input:focus,
   textarea:focus {
     border: 2px solid var(--text-subtitle-color);
     box-shadow: 0 0 0 3px rgba(255, 197, 118, 0.1);
+  }
+
+  .dark input:focus,
+  .dark textarea:focus {
+    border: solid 1px var(--text-subtitle-color);
   }
 
   input::placeholder,
@@ -533,6 +566,10 @@ const sendEmail = () => {
     animation: fadeSheet 1s ease;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--color-border);
+  }
+
+  .dark .sheet {
+    border: solid 1px var(--text-subtitle-color);
   }
 
   .contact-page {

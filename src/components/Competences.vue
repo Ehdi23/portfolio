@@ -99,44 +99,47 @@ const competences = [
     name: "Frontend",
     icon: "paint-brush",
     skills: [
-      { name: "Vue.js", level: 90 },
-      { name: "JavaScript (ES6+)", level: 85 },
-      { name: "HTML5 / CSS3", level: 95 },
-      { name: "Responsive Design", level: 90 },
-      { name: "Vite / Webpack", level: 80 },
+      { name: "Vue.js" },
+      { name: "JavaScript (ES6+)" },
+      { name: "HTML5 / CSS3" },
+      { name: "Responsive Design" },
+      { name: "Vite / Webpack" },
     ],
   },
   {
     name: "Backend",
     icon: "server",
     skills: [
-      { name: "Laravel", level: 88 },
-      { name: "PHP", level: 85 },
-      { name: "API RESTful", level: 90 },
-      { name: "MySQL", level: 85 },
-      { name: "Architecture MVC", level: 88 },
+      { name: "Laravel" },
+      { name: "PHP" },
+      { name: "API RESTful" },
+      { name: "MySQL" },
+      { name: "Architecture MVC" },
     ],
   },
   {
     name: "Outils & Méthodologies",
     icon: "tools",
     skills: [
-      { name: "Git / GitHub", level: 90 },
-      { name: "Agile / Scrum", level: 80 },
-      { name: "Testing (PHPUnit)", level: 75 },
-      { name: "Docker", level: 70 },
-      { name: "CI/CD", level: 75 },
+      { name: "Git / GitHub" },
+      { name: "Agile / Scrum" },
+      { name: "TDD & Testing (PHPUnit, PestPHP)" },
+      { name: "Actions / Flux / Redux" },
+      { name: "SOLID & Design Patterns (SOLID, Design Patterns)" },
+      { name: "Clean Code & Refactoring" },
+      { name: "Docker" },
+      { name: "CI/CD" },
     ],
   },
   {
     name: "Compétences Transverses",
     icon: "lightbulb",
     skills: [
-      { name: "Optimisation Performance", level: 85 },
-      { name: "Sécurité Web", level: 80 },
-      { name: "Accessibilité (WCAG)", level: 75 },
-      { name: "SEO", level: 80 },
-      { name: "Code Review", level: 85 },
+      { name: "Optimisation Performance" },
+      { name: "Sécurité Web" },
+      { name: "Accessibilité (WCAG)" },
+      { name: "SEO" },
+      { name: "Code Review" },
     ],
   },
 ];
@@ -261,16 +264,20 @@ onMounted(() => {
 /* Carte de catégorie */
 .competence-category {
   background: var(--card-background);
-  border: 1px solid var(--color-border);
   padding: 2rem;
   box-shadow: 0 4px 6px var(--card-shadow);
   transition: all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.5rem;
 }
 
 .competence-category:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 24px var(--card-shadow-hover);
-  border-color: var(--text-subtitle-color);
+  border-color: var(--color-border);
+}
+
+.dark .competence-category:hover {
+  border: solid 1px var(--color-border);
 }
 
 .competence-category__header {
@@ -283,8 +290,12 @@ onMounted(() => {
   transition: border-color 0.3s ease;
 }
 
+.dark .competence-category__header {
+  border-bottom: solid 1px var(--color-border);
+}
+
 .competence-category:hover .competence-category__header {
-  border-bottom-color: var(--text-subtitle-color);
+  border-bottom-color: var(--color-border);
 }
 
 .competence-category__icon {
@@ -300,6 +311,7 @@ onMounted(() => {
   );
   color: var(--card-background);
   transition: transform 0.3s ease;
+  border-radius: 0.5rem;
 }
 
 .competence-category__icon .icon {
@@ -329,14 +341,18 @@ onMounted(() => {
 .competence-item {
   padding: 0.75rem 1rem;
   background: var(--color-background-soft);
-  border: 1px solid var(--color-border);
   transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border);
 }
 
 .competence-item:hover {
   background: var(--color-background-mute);
-  border-color: var(--text-subtitle-color);
   transform: translateX(0.5rem);
+}
+
+.dark .competence-item:hover {
+  border: solid 1px var(--color-border);
 }
 
 .competence-item__name {

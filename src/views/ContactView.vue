@@ -50,6 +50,11 @@ import TheFooter from "@/components/TheFooter.vue";
   background: var(--card-background);
   box-shadow: 0 10px 30px var(--card-shadow);
   border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+}
+
+.dark .intro-container__texts {
+  border: solid 1px var(--text-subtitle-color);
 }
 
 .intro-container__texts p {

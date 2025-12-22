@@ -77,7 +77,7 @@ const route = useRoute();
 
   .logo img {
     width: 100%;
-    animation: tightToStretch 2s ease-in-out forwards;
+    animation: logoEntry 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 }
 
@@ -114,6 +114,7 @@ const route = useRoute();
 
   .logo img {
     width: 40%;
+    animation: logoEntry 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   .navbar {
@@ -138,12 +139,25 @@ const route = useRoute();
     justify-content: space-between;
   }
 
+  .logo {
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
   .logo img {
-    display: none;
+    width: 80px;
+    height: auto;
+    display: block;
+    animation: logoEntry 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   .navbar {
-    width: 100%;
+    width: auto;
     padding-right: 0.5rem;
     display: flex;
     justify-content: flex-end;
@@ -151,6 +165,9 @@ const route = useRoute();
   }
 
   .btn-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 0.75rem;
   }
 
@@ -174,7 +191,31 @@ const route = useRoute();
     min-height: 3.5rem;
   }
 
+  .logo {
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .logo img {
+    width: 60px;
+    height: auto;
+    display: block;
+    animation: logoEntry 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .navbar {
+    width: auto;
+  }
+
   .btn-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 0.5rem;
   }
 
@@ -182,6 +223,21 @@ const route = useRoute();
     width: 7rem;
     height: 2.5rem;
     font-size: 0.9rem;
+  }
+}
+
+@keyframes logoEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px) rotate(0deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) rotate(360deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(360deg);
   }
 }
 </style>
